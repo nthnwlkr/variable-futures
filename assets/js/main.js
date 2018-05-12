@@ -1,9 +1,14 @@
+////// DRAGGABLE CROSSHAIR HANDLE ///////
+
 //Make the DIV element draggagle:
-dragElement(document.getElementById(("cross-hair-click-target")));
+window.onload = function() {
+  dragElement(document.getElementById(("crosshairclicktarget")));
+} 
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   elmnt.onmousedown = dragMouseDown;
+  // add class to attach click styling:
 
 
   function dragMouseDown(e) {
@@ -14,6 +19,7 @@ function dragElement(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
+    elmnt.classList.add("is-clicked");
   }
 
   function elementDrag(e) {
@@ -32,5 +38,12 @@ function dragElement(elmnt) {
     /* stop moving when mouse button is released:*/
     document.onmouseup = null;
     document.onmousemove = null;
+    elmnt.classList.remove("is-clicked");
   }
 }
+
+
+/////////////////////////
+
+
+

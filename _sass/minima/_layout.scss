@@ -1,11 +1,19 @@
 /** Tools Styling **/
+.trail-container {
+}
+.trail {
+  position: absolute;
+  height: 3px; width: 3px;
+  border-radius: 3px;
+  background: $brand-color;
+  pointer-events: none;
+}
 .tool-main {
   background-color: $dark-grey;
   width: 100vw;
   height: 100vh;
 }
 .ui-elements-container {
-
 }
 .type-canvas {
   width: 100vw;
@@ -37,6 +45,9 @@
   z-index: 9;
   border-radius: 100px;
 }
+.cross-hair-click-target.is-clicked > .cross-hair-handle {
+  background: $brand-color;
+}
 .crosshair {
     color: white;
     position: absolute;
@@ -54,7 +65,6 @@
   top: calc(0% + 24px);
   left: -150vw;
 }
-
 .cross-hair-handle {
   // padding: 23px;
   width: 40px;
@@ -63,6 +73,7 @@
   background-color: $light-grey;
   border-radius: inherit;
 }
+
 /**
  * Site header
  */
