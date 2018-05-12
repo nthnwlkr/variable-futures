@@ -76,6 +76,7 @@
     z-index: -1;
     transition: opacity 100ms ease-out;
     opacity: 0.3;
+    pointer-events: none;
   }
 .crosshair-horizontal {
   height: 2px;
@@ -114,13 +115,13 @@
   pointer-events: initial;
   margin-top: 40vh;
   padding: 10px;
-  ::selection {
-    background: $dark-grey;
-  }
 }
 [contenteditable]:focus { 
   outline: 2px solid rgba($white, 0.3) !important; 
 }
+[contenteditable]::selection {
+    background: darken($dark-grey, 0.5);
+  }
 
 /**
  * Site header
