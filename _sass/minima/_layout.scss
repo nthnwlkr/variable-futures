@@ -1,12 +1,18 @@
 /** Tools Styling **/
+/* Tools typography */
+.ui-elements-container {
+  font-family: $mono-font-family;
+  color: $white;
+}
 .trail-container {
 }
 .trail {
   position: absolute;
-  height: 3px; width: 3px;
-  border-radius: 3px;
+  height: 2px; width: 2px;
+  border-radius: 100px;
   background: $brand-color;
   pointer-events: none;
+  z-index: 21;
 }
 .tool-main {
   background-color: $dark-grey;
@@ -14,19 +20,22 @@
   height: 100vh;
 }
 .ui-elements-container {
+  position: fixed;
 }
 .type-canvas {
   width: 100vw;
   height: 100vh;
-  position: relative;
 }
 .cross-hairs-container {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  // top: -10vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
+  pointer-events: none;
 }
 .cross-hair-click-target {
   position: absolute;
@@ -44,9 +53,17 @@
   height: 50px;
   z-index: 9;
   border-radius: 100px;
+  pointer-events: initial;
 }
-.cross-hair-click-target.is-clicked > .cross-hair-handle {
-  background: $brand-color;
+.cross-hair-click-target.is-clicked {
+  .cross-hair-handle {
+    background: $brand-color;
+    transform: scale(1.2,1.2);
+  }
+  .crosshair {
+    background: $brand-color;
+    opacity: 0.6;
+  }
 }
 .crosshair {
     color: white;
@@ -57,7 +74,8 @@
     width: 2px;
     background: white;
     z-index: -1;
-    opacity: 0.3
+    transition: opacity 100ms ease-out;
+    opacity: 0.3;
   }
 .crosshair-horizontal {
   height: 2px;
@@ -66,12 +84,42 @@
   left: -150vw;
 }
 .cross-hair-handle {
-  // padding: 23px;
   width: 40px;
   height: 40px;
   z-index: 10;
   background-color: $light-grey;
   border-radius: inherit;
+  transition: transform 100ms ease-out
+}
+
+/* Text entry box */
+.text-box-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0.001em;
+}
+.text-entry-box {
+  position: relative;
+  // z-index: 20;
+  font-size: 10vw;
+  color: $white;
+  text-align: center;
+  font-family: $sans-font-family;
+  pointer-events: initial;
+  margin-top: 40vh;
+  padding: 10px;
+  ::selection {
+    background: $dark-grey;
+  }
+}
+[contenteditable]:focus { 
+  outline: 2px solid rgba($white, 0.3) !important; 
 }
 
 /**
@@ -85,4 +133,7 @@
   // Positioning context for the mobile navigation icon
   position: relative;
 }
+
+
+
 

@@ -9,6 +9,10 @@ var dots = [],
       y: 0
     };
 
+// mouseX, mouseY are the x and y value of the mouse;
+var mouseX,
+    mouseY;
+
 var tailContainer = document.createElement("div");
 tailContainer.setAttribute ("id", "tail-container");
 document.body.appendChild(tailContainer);
@@ -33,7 +37,7 @@ Dot.prototype.draw = function() {
 };
 
 // Creates the Dot objects, populates the dots array
-for (var i = 0; i < 500; i++) {
+for (var i = 0; i < 800; i++) {
   var d = new Dot();
   dots.push(d);
 }
@@ -52,8 +56,8 @@ function draw() {
     dot.x = x;
     dot.y = y;
     dot.draw();
-    x += (nextDot.x - dot.x) * .05;
-    y += (nextDot.y - dot.y) * .05;
+    x += (nextDot.x - dot.x) * 0.05;
+    y += (nextDot.y - dot.y) * 0.05;
 
   });
 }
