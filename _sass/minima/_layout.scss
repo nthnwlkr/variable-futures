@@ -10,6 +10,7 @@
 .type-canvas {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 .cross-hairs-container {
   width: 100vw;
@@ -35,8 +36,8 @@
   height: 50px;
   z-index: 9;
   border-radius: 100px;
-  :before, :after {
-    content: '';
+}
+.crosshair {
     color: white;
     position: absolute;
     height: 300vh;
@@ -44,15 +45,16 @@
     left: calc(0% + 24px);
     width: 2px;
     background: white;
-    z-index: 8;
+    z-index: -1;
+    opacity: 0.3
   }
-  :after {
-    height: 2px;
-    width: 300vw;
-    top: calc(0% + 24px);
-    left: -150vw;
-  }
+.crosshair-horizontal {
+  height: 2px;
+  width: 300vw;
+  top: calc(0% + 24px);
+  left: -150vw;
 }
+
 .cross-hair-handle {
   // padding: 23px;
   width: 40px;
