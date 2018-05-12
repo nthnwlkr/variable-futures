@@ -1,0 +1,37 @@
+---
+<!-- layout: default -->
+---
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body class="{{page.body-class}}">
+    <!-- {%- include header.html -%} -->
+    <main class="tool-main page-content" aria-label="Content">
+    	<div class="ui-elements-container">
+    		<div class="site-wrapper">
+    			<div class="axis-controls-section">
+    				<div class="axis-switch-container"></div>
+    				<div class="axis-values-container"></div>
+    			</div>
+    			<div class="code-export-controls">
+    				<div class="code-to-copy"></div>
+    				<div class="css-flavour-selector"></div>
+    			</div>
+    		</div>
+    	</div>
+      <div class="type-canvas">
+     		<div class="cross-hairs-container">
+     			<div id="crosshairclicktarget" class="cross-hair-click-target">
+     				<div class="cross-hair-handle"></div>
+     			</div>
+     		</div>
+       	<div class="type-wrapper">
+       		<div class="text-entry-box"></div>
+       	</div>
+      </div>
+    </main>
+
+    <!-- {%- include footer.html -%} -->
+
+  </body>
+
+</html>
