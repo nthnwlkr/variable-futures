@@ -37,8 +37,21 @@
 .switch-container {
   display: flex;
 }
+.switch-icon {
+  width: 17px;
+  height: 17px;
+  margin-right: $spacing-unit;
+  background-image: url('/assets/images/axis-arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.switch-horizontal .switch-icon {
+  transform: rotate(90deg);
+}
 .switch {
   display: flex;
+  align-items: center;
 }
 .switch-style {
   background: none;
