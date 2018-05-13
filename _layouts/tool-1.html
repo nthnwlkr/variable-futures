@@ -3,7 +3,6 @@
 ---
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
-  <script src="{{ "/assets/js/crosshair-drag.js" | relative_url }}"></script>
   <body class="{{page.body-class}}">
     <!-- {%- include header.html -%} -->
     <main class="tool-main page-content" aria-label="Content">
@@ -28,7 +27,7 @@
      			</div>
      		</div>
        	<div class="text-box-wrapper">
-       		<div class="text-entry-box" contenteditable="true">Type here</div>
+       		<div class="text-entry-box" id="text-entry-box" contenteditable="true">Type here</div>
        	</div>
       </div>
     </main>
@@ -36,6 +35,7 @@
     <!-- {%- include footer.html -%} -->
 
   </body>
+  <script src="{{ "/assets/js/crosshair-drag.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/mouse-trail.js" | relative_url }}"></script>
 
 </html>
