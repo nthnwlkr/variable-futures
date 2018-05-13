@@ -9,11 +9,35 @@
     	<div class="ui-elements-container">
     		<div class="site-wrapper">
     			<div class="axis-controls-section">
-    				<div class="axis-switch-container"></div>
+    				<div class="axis-switch-block">
+              <h2 class="ui-section-label">Choose a variable axis</h2> 
+              <div class="switch-container">
+                <div class="switch switch-horizontal">
+                  <div class="switch-icon"></div>
+                  <div class="switch-style">
+                    <select class="switch-input switch-horizontal-input" onchange="onValueChange()">
+                      <option value="'wght'" selected="true">Weight</option>
+                      <option value="'ital'">Italic</option>
+                      <option value="'wdth'">Width</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="switch switch-vertical">
+                  <div class="switch-icon"></div>
+                  <div class="switch-style">
+                    <select class="switch-input switch-vertical-input" onchange="onValueChange()">
+                      <option value="'wght'">Weight</option>
+                      <option value="'ital'" selected="true">Italic</option>
+                      <option value="'wdth'">Width</option>
+                    </select>
+                  </div>
+                </div>
+              </div>   
+            </div>
     				<div class="axis-values-container"></div>
     			</div>
     			<div class="code-export-controls">
-    				<div class="code-to-copy"></div>
+    				<div class="code-to-copy hide"></div>
     				<div class="css-flavour-selector"></div>
     			</div>
     		</div>
@@ -21,6 +45,7 @@
       <div class="type-canvas">
      		<div class="cross-hairs-container">
      			<div id="crosshairclicktarget" class="cross-hair-click-target">
+            <div class="crosshair-tooltip">Drag me</div>
      				<div class="cross-hair-handle"></div>
             <div class="crosshair crosshair-vertical"></div>
             <div class="crosshair crosshair-horizontal"></div>

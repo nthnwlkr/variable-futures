@@ -4,6 +4,9 @@
   font-family: $mono-font-family;
   color: $white;
 }
+.hide {
+  display: none;
+}
 .trail-container {
 }
 .trail {
@@ -21,6 +24,44 @@
 }
 .ui-elements-container {
   position: fixed;
+}
+.axis-switch-block {
+  float: left;
+  margin: 20px 0px 0px 20px;
+}
+.ui-section-label {
+  font-size: $base-font-size;
+  font-family: $mono-font-family;
+  margin-bottom: $spacing-unit;
+}
+.switch-container {
+  display: flex;
+}
+.switch {
+  display: flex;
+}
+.switch-style {
+  background: none;
+  margin-right: $spacing-unit;
+  width: auto;
+}
+.switch-style select {
+  padding: 10px 13px 10px 0px;
+  font-size: $small-font-size;
+  color: $white;
+  width: 5em;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px solid rgba($white, 0.15);
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.switch-style select:focus {
+    outline: none;
 }
 .type-canvas {
   width: 100vw;
@@ -55,7 +96,33 @@
   border-radius: 100px;
   pointer-events: initial;
 }
+@keyframes crosshairTooltip {
+  0% {
+    transform: scale(1,1);
+  }
+  100% {
+    transform: scale(1.1, 1.1)
+  }
+}
+.crosshair-tooltip {
+  position: absolute;
+  font-family: $mono-font-family;
+  color: $white;
+  font-size: 15px;
+  top: -50px;
+  width: 90px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba($black, 0.6);
+  animation: crosshairTooltip 1000ms infinite alternate;
+  display: block;
+  pointer-events: none;
+}
 .cross-hair-click-target.is-clicked {
+  .crosshair-tooltip {
+    display: none;
+  }
   .cross-hair-handle {
     background: $brand-color;
     transform: scale(1.2,1.2);
@@ -108,7 +175,7 @@
 .text-entry-box {
   position: relative;
   // z-index: 20;
-  font-size: 10vw;
+  font-size: 13vw;
   font-variation-settings: 'wght' 575, 'ital' 0.5;
   color: $white;
   text-align: center;

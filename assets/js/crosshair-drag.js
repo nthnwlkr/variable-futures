@@ -15,7 +15,44 @@ var windowWidth = window.innerWidth,
     italAxisMaxValue = 1,  
     italAxisScaleFactor = (italAxisMaxValue - italAxisMinValue) / 100,
     italCssPrefix = "'ital'",
-    textInputBox = document.getElementById("text-entry-box");
+    wdthAxisMinValue = 75,  
+    wdthAxisMaxValue = 125,  
+    wdthAxisScaleFactor = (wdthAxisMaxValue - wdthAxisMinValue) / 100,
+    wdthCssPrefix = "'wdth'",
+    textInputBox = document.getElementById("text-entry-box"),
+    xSwitch = document.getElementsByClassName("switch-horizontal-input")[0],
+    xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
+    xSwitchIndex = xSwitch.options[xSwitch.selectedIndex].index,
+    ySwitch = document.getElementsByClassName("switch-vertical-input")[0],
+    ySwitchValue = ySwitch.options[ySwitch.selectedIndex].value,
+    ySwitchIndex = ySwitch.options[ySwitch.selectedIndex];
+    
+function onValueChange() {
+  // gets new switch values when a new value is selected in dropdown:
+  xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
+  xSwitchIndex = xSwitch.options[xSwitch.selectedIndex].index,
+  ySwitchValue = ySwitch.options[ySwitch.selectedIndex].value,
+  ySwitchIndex = ySwitch.options[ySwitch.selectedIndex].index;
+  // call option disabling function:
+  switchLogic();
+}
+function switchLogic() {
+  for (i = 0;i<ySwitch.options.length; i++) {
+    // clear disable attributes from all options:
+    ySwitch.options[i].setAttribute("enabled", "enabled");
+    ySwitch.options[i].removeAttribute("disabled", "disabled");
+  }
+  // add disabled attribute only to required element:
+  ySwitch.options[xSwitchIndex].setAttribute("disabled", "disabled");
+  for (i = 0;i<xSwitch.options.length; i++) {
+    xSwitch.options[i].setAttribute("enabled", "enabled");
+    xSwitch.options[i].removeAttribute("disabled", "disabled");
+  }
+  xSwitch.options[ySwitchIndex].setAttribute("disabled", "disabled");
+}
+
+// call disabling logic on page load:
+switchLogic();
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -34,7 +71,6 @@ function dragElement(elmnt) {
     // add class to attach click styling:
     elmnt.classList.add("is-clicked");
   }
-
   function elementDrag(e) {
     e = e || window.event;
     // prevent text selection during drag:
@@ -47,11 +83,51 @@ function dragElement(elmnt) {
     // calculate cursor position as % of page width and height:
     var xPercent = pos3 / windowWidthPercent;
     var yPercent = pos4 / windowHeightPercent;
-    // calculate axis value for variable font:
-    var wghtAxisValue = xPercent * wghtAxisScaleFactor + wghtAxisMinValue; 
-    var italAxisValue = yPercent * italAxisScaleFactor + italAxisMinValue; 
-    textInputBox.setAttribute('style', 'font-variation-settings:' + wghtCssPrefix + ' ' + wghtAxisValue + ', ' + italCssPrefix + ' ' + italAxisValue );
-    console.log(wghtAxisValue);
+    // set default values before dropdown changes:
+    var yAxisValue = yPercent * italAxisScaleFactor + italAxisMinValue;
+    var xAxisValue = xPercent * wghtAxisScaleFactor + wghtAxisMinValue;
+    var xCssPrefixToAdd = xSwitchValue;
+    var yCssPrefixToAdd = ySwitchValue;
+    //switch statement based on user-selected dropdown values:
+    //for x-axis
+    console.log(xSwitchIndex);
+    switch(xSwitchIndex) {
+      case 0:
+        var xAxisValue = xPercent * wghtAxisScaleFactor + wghtAxisMinValue;
+        var xCssPrefixToAdd = wghtCssPrefix; 
+        break;
+      case 1:
+        var xAxisValue = xPercent * italAxisScaleFactor + italAxisMinValue;
+        var xCssPrefixToAdd = italCssPrefix;  
+        // textInputBox.setAttribute('style', 'font-variation-settings:' + italCssPrefix + ' ' + xAxisValue);
+        break;
+      case 2:
+        var xAxisValue = xPercent * wdthAxisScaleFactor + wdthAxisMinValue; 
+        var xCssPrefixToAdd = wdthCssPrefix; 
+        // textInputBox.setAttribute('style', 'font-variation-settings:' + wdthCssPrefix + ' ' + xAxisValue);
+        break;
+    }
+    switch(ySwitchIndex) {
+      case 0:
+        var yAxisValue = yPercent * wghtAxisScaleFactor + wghtAxisMinValue; 
+        var yCssPrefixToAdd = wghtCssPrefix;
+        // textInputBox.setAttribute('style', 'font-variation-settings:' + wghtCssPrefix + ' ' + yAxisValue);
+        break;
+      case 1:
+        var yAxisValue = yPercent * italAxisScaleFactor + italAxisMinValue;
+        var yCssPrefixToAdd = italCssPrefix; 
+        // textInputBox.setAttribute('style', 'font-variation-settings:' + italCssPrefix + ' ' + yAxisValue);
+        break;
+      case 2:
+        var yAxisValue = yPercent * wdthAxisScaleFactor + wdthAxisMinValue; 
+        var yCssPrefixToAdd = wdthCssPrefix;
+        // textInputBox.setAttribute('style', 'font-variation-settings:' + wdthCssPrefix + ' ' + yAxisValue);
+        break;
+    }
+    // set variable font axes styling:
+    textInputBox.setAttribute('style', 'font-variation-settings:' + xCssPrefixToAdd + ' ' + xAxisValue + ', ' + yCssPrefixToAdd + ' ' + yAxisValue);
+
+    // console.log(wghtAxisValue);
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
