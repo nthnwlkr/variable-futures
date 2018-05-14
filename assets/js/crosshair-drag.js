@@ -19,6 +19,7 @@ var windowWidth = window.innerWidth,
     wdthAxisMaxValue = 125,  
     wdthAxisScaleFactor = (wdthAxisMaxValue - wdthAxisMinValue) / 100,
     wdthCssPrefix = "'wdth'",
+    crosshairContainer = document.getElementsByClassName("cross-hairs-container")[0],
     textInputBox = document.getElementById("text-entry-box"),
     xSwitch = document.getElementsByClassName("switch-horizontal-input")[0],
     xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
@@ -26,7 +27,8 @@ var windowWidth = window.innerWidth,
     ySwitch = document.getElementsByClassName("switch-vertical-input")[0],
     ySwitchValue = ySwitch.options[ySwitch.selectedIndex].value,
     ySwitchIndex = ySwitch.options[ySwitch.selectedIndex];
-    
+
+// textInputBox.focus();
 function onValueChange() {
   // gets new switch values when a new value is selected in dropdown:
   xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
@@ -50,6 +52,12 @@ function switchLogic() {
   }
   xSwitch.options[ySwitchIndex].setAttribute("disabled", "disabled");
 }
+function addClickedClass(target) {
+  target.classList.add("is-clicked");
+}
+function removeClickedClass(target) {
+  target.classList.remove("is-clicked");
+}
 
 // call disabling logic on page load:
 switchLogic();
@@ -69,7 +77,9 @@ function dragElement(elmnt) {
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
     // add class to attach click styling:
-    elmnt.classList.add("is-clicked");
+    addClickedClass(elmnt);
+    addClickedClass(crosshairContainer);
+    addClickedClass(textInputBox);
   }
   function elementDrag(e) {
     e = e || window.event;
@@ -141,7 +151,9 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
     // remove class to remove click styling:
-    elmnt.classList.remove("is-clicked");
+    removeClickedClass(elmnt);
+    removeClickedClass(crosshairContainer);
+    removeClickedClass(textInputBox);
   }
 }
 

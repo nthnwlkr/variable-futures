@@ -10,12 +10,12 @@
     		<div class="site-wrapper">
     			<div class="axis-controls-section">
     				<div class="axis-switch-block">
-              <h2 class="ui-section-label">Choose a variable axis</h2> 
+              <h2 class="ui-section-label">Select axes</h2> 
               <div class="switch-container">
                 <div class="switch switch-horizontal">
                   <div class="switch-icon"></div>
                   <div class="switch-style">
-                    <select class="switch-input switch-horizontal-input" onchange="onValueChange()">
+                    <select class="switch-input switch-horizontal-input ui-element" onchange="onValueChange()">
                       <option value="'wght'" selected="true">Weight</option>
                       <option value="'ital'">Italic</option>
                       <option value="'wdth'">Width</option>
@@ -25,7 +25,7 @@
                 <div class="switch switch-vertical">
                   <div class="switch-icon"></div>
                   <div class="switch-style">
-                    <select class="switch-input switch-vertical-input" onchange="onValueChange()">
+                    <select class="switch-input switch-vertical-input ui-element" onchange="onValueChange()">
                       <option value="'wght'">Weight</option>
                       <option value="'ital'" selected="true">Italic</option>
                       <option value="'wdth'">Width</option>
@@ -52,7 +52,7 @@
      			</div>
      		</div>
        	<div class="text-box-wrapper">
-       		<div class="text-entry-box" id="text-entry-box" contenteditable="true">Type here</div>
+       		<div class="text-entry-box" id="text-entry-box" contenteditable="true" autofocus="autofocus">Type here</div>
        	</div>
       </div>
     </main>

@@ -11,17 +11,19 @@ $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
+$border-radius:    4px;
 
 $spacing-unit:     10px !default;
 
 /* Colors */
 $text-color:       red !default;
-$dark-grey:        #222222;
+$dark-grey:        #161616;
 $light-grey:       #B5B5B5;
 $background-color: #fdfdfd !default;
 $brand-color:      #ff2e2e !default;
 $white:            #fff;
 $black: 					 #000;
+$blue:             #0000ff;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;

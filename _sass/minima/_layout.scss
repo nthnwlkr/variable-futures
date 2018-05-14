@@ -4,6 +4,9 @@
   font-family: $mono-font-family;
   color: $white;
 }
+.ui-element {
+  font-family: $mono-font-family;
+}
 .hide {
   display: none;
 }
@@ -32,7 +35,7 @@
 .ui-section-label {
   font-size: $base-font-size;
   font-family: $mono-font-family;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 2;
 }
 .switch-container {
   display: flex;
@@ -40,6 +43,7 @@
 .switch-icon {
   width: 17px;
   height: 17px;
+  margin-top: -1px;
   margin-right: $spacing-unit;
   background-image: url('/assets/images/axis-arrow.svg');
   background-size: contain;
@@ -54,24 +58,41 @@
   align-items: center;
 }
 .switch-style {
+  position: relative;
   background: none;
-  margin-right: $spacing-unit;
+  margin-right: $spacing-unit * 3;
   width: auto;
+  &:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 32%;
+    bottom: 0;
+    width: 13px;
+    height: 13px;
+    background-image: url('/assets/images/dropdown-arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events: none;
+  }
 }
 .switch-style select {
-  padding: 10px 13px 10px 0px;
+  padding: 10px 13px;
   font-size: $small-font-size;
   color: $white;
-  width: 5em;
+  width: 8em;
   border: none;
-  border-radius: 0px;
-  border-bottom: 2px solid rgba($white, 0.15);
+  border-radius: $border-radius;
   box-shadow: none;
-  background-color: transparent;
+  background-color: rgba($white, 0.08);
   background-image: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .switch-style select:focus {
     outline: none;
@@ -90,6 +111,9 @@
   justify-content: center;
   z-index: 20;
   pointer-events: none;
+}
+.cross-hairs-container.is-clicked {
+  mix-blend-mode: difference;
 }
 .cross-hair-click-target {
   position: absolute;
@@ -142,7 +166,7 @@
   }
   .crosshair {
     background: $brand-color;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 .crosshair {
@@ -155,7 +179,7 @@
     background: white;
     z-index: -1;
     transition: opacity 100ms ease-out;
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none;
   }
 .crosshair-horizontal {
@@ -197,8 +221,12 @@
   margin-top: 40vh;
   padding: 10px;
 }
+.text-entry-box.is-clicked {
+  color: $blue;
+}
 [contenteditable]:focus { 
-  outline: 2px solid rgba($white, 0.3) !important; 
+  // outline: 2px solid rgba($white, 0.3) !important; 
+  outline: none !important; 
 }
 [contenteditable]::selection {
     background: darken($dark-grey, 0.5);
