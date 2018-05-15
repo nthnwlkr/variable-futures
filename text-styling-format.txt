@@ -1,0 +1,8 @@
+@font-face {
+	font-family: "Kairos";
+	src: url('/fonts/KairosSans_Variable.ttf');
+}
+.text-container {
+	font-family: "Kairos";
+	font-variation-settings: font-variation-settings: 'wght' 575, 'ital' 0.5; 
+}

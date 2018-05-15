@@ -1,14 +1,21 @@
+.hide {
+  display: none;
+}
 /** Tools Styling **/
 /* Tools typography */
 .ui-elements-container {
   font-family: $mono-font-family;
   color: $white;
+  width: 100%;
 }
 .ui-element {
   font-family: $mono-font-family;
-}
-.hide {
-  display: none;
+  padding: $spacing-unit 13px;
+  border-radius: $border-radius;
+  font-size: $small-font-size;
+  color: $white;
+  border: none;
+  background-color: rgba($white, 0.08);
 }
 .trail-container {
 }
@@ -30,7 +37,7 @@
 }
 .axis-switch-block {
   float: left;
-  margin: 20px 0px 0px 20px;
+  margin: ($spacing-unit * 2) 0px 0px ($spacing-unit * 2);
 }
 .ui-section-label {
   font-size: $base-font-size;
@@ -48,7 +55,7 @@
   background-image: url('/assets/images/axis-arrow.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center right;
 }
 .switch-horizontal .switch-icon {
   transform: rotate(90deg);
@@ -60,7 +67,7 @@
 .switch-style {
   position: relative;
   background: none;
-  margin-right: $spacing-unit * 3;
+  margin-right: $spacing-unit * 2;
   width: auto;
   &:before {
     content: '';
@@ -78,14 +85,8 @@
   }
 }
 .switch-style select {
-  padding: 10px 13px;
-  font-size: $small-font-size;
-  color: $white;
   width: 8em;
-  border: none;
-  border-radius: $border-radius;
   box-shadow: none;
-  background-color: rgba($white, 0.08);
   background-image: none;
   -webkit-appearance: none;
      -moz-appearance: none;

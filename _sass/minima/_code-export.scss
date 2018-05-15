@@ -1,0 +1,46 @@
+.code-export-block {
+	float: right;
+	width: 400px;
+	margin: ($spacing-unit * 2) ($spacing-unit * 2) 0px 0px;
+}
+.code-to-copy {
+	height: 0;
+	margin-top: $spacing-unit;
+	overflow: hidden;
+	transition: height 350ms ease;
+}
+.code-to-copy.is-open {
+	height: 200px;
+}
+.syntax-options {
+	display: flex;
+}
+.syntax-radio-container {
+	display: flex;
+	align-items: center;
+	margin-right: $spacing-unit * 2;
+}
+.syntax-radio {
+	margin-right: $spacing-unit;
+}
+.show-hide-button-container {
+	display: flex;
+	width: 97px;
+	align-items: center;
+}
+.code-button {
+	cursor: pointer;
+}
+.show-hide-icon {
+	width: 11px;
+	height: 11px;
+	margin-left: $spacing-unit;
+	background: url('/assets/images/button-plus.svg');
+	background-size: cover;
+	background-position: center center;
+	transform: rotate(0);
+	transition: transform 200ms ease-in;
+}
+.show-hide-icon.open {
+	transform: rotate(135deg);
+}

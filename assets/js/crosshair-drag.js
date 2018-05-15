@@ -21,6 +21,7 @@ var windowWidth = window.innerWidth,
     wdthCssPrefix = "'wdth'",
     crosshairContainer = document.getElementsByClassName("cross-hairs-container")[0],
     textInputBox = document.getElementById("text-entry-box"),
+    syntaxVariationTarget = document.getElementsByClassName("variation-target"),
     xSwitch = document.getElementsByClassName("switch-horizontal-input")[0],
     xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
     xSwitchIndex = xSwitch.options[xSwitch.selectedIndex].index,
@@ -28,7 +29,7 @@ var windowWidth = window.innerWidth,
     ySwitchValue = ySwitch.options[ySwitch.selectedIndex].value,
     ySwitchIndex = ySwitch.options[ySwitch.selectedIndex];
 
-// textInputBox.focus();
+textInputBox.focus();
 function onValueChange() {
   // gets new switch values when a new value is selected in dropdown:
   xSwitchValue = xSwitch.options[xSwitch.selectedIndex].value,
@@ -65,7 +66,6 @@ switchLogic();
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var textNode = document.getElementsByClassName("code-to-copy")[0];
-  textNode.innerHTML = "X Position" + "<br>" + "Y Position";
   elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
@@ -94,7 +94,7 @@ function dragElement(elmnt) {
     var xPercent = pos3 / windowWidthPercent;
     var yPercent = pos4 / windowHeightPercent;
     // set default values before dropdown changes:
-    var yAxisValue = yPercent * italAxisScaleFactor + italAxisMinValue;
+    var yAxisValue = Math.round((yPercent * italAxisScaleFactor + italAxisMinValue) * 100) / 100;
     var xAxisValue = xPercent * wghtAxisScaleFactor + wghtAxisMinValue;
     var xCssPrefixToAdd = xSwitchValue;
     var yCssPrefixToAdd = ySwitchValue;
@@ -103,47 +103,64 @@ function dragElement(elmnt) {
     console.log(xSwitchIndex);
     switch(xSwitchIndex) {
       case 0:
-        var xAxisValue = xPercent * wghtAxisScaleFactor + wghtAxisMinValue;
+        var xAxisValue = Math.round(xPercent * wghtAxisScaleFactor + wghtAxisMinValue);
         var xCssPrefixToAdd = wghtCssPrefix; 
         break;
       case 1:
-        var xAxisValue = xPercent * italAxisScaleFactor + italAxisMinValue;
+        var xAxisValue = Math.round((xPercent * italAxisScaleFactor + italAxisMinValue) * 100) / 100;
         var xCssPrefixToAdd = italCssPrefix;  
         // textInputBox.setAttribute('style', 'font-variation-settings:' + italCssPrefix + ' ' + xAxisValue);
         break;
       case 2:
-        var xAxisValue = xPercent * wdthAxisScaleFactor + wdthAxisMinValue; 
+        var xAxisValue = Math.round(xPercent * wdthAxisScaleFactor + wdthAxisMinValue); 
         var xCssPrefixToAdd = wdthCssPrefix; 
         // textInputBox.setAttribute('style', 'font-variation-settings:' + wdthCssPrefix + ' ' + xAxisValue);
         break;
     }
     switch(ySwitchIndex) {
       case 0:
-        var yAxisValue = yPercent * wghtAxisScaleFactor + wghtAxisMinValue; 
+        var yAxisValue = Math.round(yPercent * wghtAxisScaleFactor + wghtAxisMinValue); 
         var yCssPrefixToAdd = wghtCssPrefix;
         // textInputBox.setAttribute('style', 'font-variation-settings:' + wghtCssPrefix + ' ' + yAxisValue);
         break;
       case 1:
-        var yAxisValue = yPercent * italAxisScaleFactor + italAxisMinValue;
+        var yAxisValue = Math.round((yPercent * italAxisScaleFactor + italAxisMinValue) * 100) / 100;
+        console.log('this' + yAxisValue);
         var yCssPrefixToAdd = italCssPrefix; 
         // textInputBox.setAttribute('style', 'font-variation-settings:' + italCssPrefix + ' ' + yAxisValue);
         break;
       case 2:
-        var yAxisValue = yPercent * wdthAxisScaleFactor + wdthAxisMinValue; 
+        var yAxisValue = Math.round(yPercent * wdthAxisScaleFactor + wdthAxisMinValue); 
         var yCssPrefixToAdd = wdthCssPrefix;
         // textInputBox.setAttribute('style', 'font-variation-settings:' + wdthCssPrefix + ' ' + yAxisValue);
         break;
     }
     // set variable font axes styling:
-    textInputBox.setAttribute('style', 'font-variation-settings:' + xCssPrefixToAdd + ' ' + xAxisValue + ', ' + yCssPrefixToAdd + ' ' + yAxisValue);
+    // function roundValueX(target) {
+    //   target = Math.round(target);
+    //   console.log(target);
+    //   return xAxisValue = target;
+    // }
+    // function roundValueY(target) {
+    //   target = Math.round(target);
+    //   console.log(target);
+    //   return yAxisValue = target;
+    // }
+    // roundValueX(xAxisValue);
+    // roundValueY(yAxisValue);
+    // roundValue(yAxisValue);
+    // console.log(xAxisValue);
+    // console.log(yAxisValue);
+    var style_string = xCssPrefixToAdd + ' ' + xAxisValue + ', ' + yCssPrefixToAdd + ' ' + yAxisValue;
+    textInputBox.setAttribute('style', 'font-variation-settings:' + style_string);
+    for (i=0;i<syntaxVariationTarget.length;i++) {
+        syntaxVariationTarget[i].innerHTML = style_string;
+    }
 
     // console.log(wghtAxisValue);
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    var xNode = "X Position = " + pos3; 
-    var yNode = "Y Position = " + pos4; 
-    textNode.innerHTML = xNode + "<br>" + yNode;
   }
 
   function closeDragElement() {
