@@ -215,7 +215,7 @@
   // z-index: 20;
   font-size: 13vw;
   font-variation-settings: 'wght' 575, 'ital' 0.5;
-  color: $white;
+  color: rgba($white, 0.9);
   text-align: center;
   font-family: $sans-font-family;
   pointer-events: initial;
@@ -223,7 +223,7 @@
   padding: 10px;
 }
 .text-entry-box.is-clicked {
-  color: $light-grey;
+  color: $white;
 }
 [contenteditable]:focus { 
   // outline: 2px solid rgba($white, 0.3) !important; 

@@ -1,0 +1,50 @@
+---
+layout: tool
+---
+	<div class="ui-elements-container">
+		<div class="site-wrapper">
+			<div class="code-export-controls">
+        <div class="code-export-block">
+          <h2 class="ui-section-label">CSS Export</h2>
+          <div class="syntax-selectors">
+            <form action="" class="syntax-options">
+              {% for item in page.code_types %}
+              <div class="syntax-radio-container">
+                <input type="radio" onchange="onSyntaxChange(this)" class="syntax-radio {{item}}" name="syntax-option" value="{{item}}" {% if item == 'css' %} checked="checked" {% endif %}>
+                <p class="radio-label">{{item | capitalize}}</p>
+              </div>
+              {% endfor %}
+            </form>
+          </div>
+          <div class="show-hide-button-container ui-element">
+            <div class="reveal-code-button code-button" onClick="revealCode()">
+              <p class="show-button-label button-label">Show code</p>
+            </div>
+            <div class="hide-code-button code-button hide" onClick="hideCode()">
+              <p class="hide-button-label button-label">Hide code</p>
+            </div>
+            <div class="show-hide-icon"></div>
+          </div>
+          <div class="code-to-copy">
+            {% for syntaxType in page.code_types %}
+            <pre class="formatted-code {{syntaxType}}-format {% if syntaxType != 'css' %}hide{% endif %}">
+              {%- include syntaxes/{{syntaxType}}-syntax.html -%}
+            </pre>
+            {% endfor %}
+          </div>
+          <div class="css-flavour-selector"></div>
+        </div>
+      </div>
+
+      <div id="container" class="ui-widget-content">
+        <h3 class="ui-widget-header">Containment</h3>
+        <span id="draggable">*  
+          <input type="text "id="resizable" class="ui-state-active" value="This is input box">
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="canvas"></div>
+<!-- {%- include footer.html -%} -->
+
+<script src="{{ "/assets/js/draw-text.js" | relative_url }}"></script>

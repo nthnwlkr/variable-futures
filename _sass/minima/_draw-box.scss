@@ -1,0 +1,47 @@
+body.draw-tool {
+	.ui-elements-container {
+		pointer-events: none;
+		> * {
+			pointer-events: auto;
+		}
+	}
+}
+.rectangle {
+	// background: white;
+	border: 1px solid $brand-color;
+	position: absolute;
+}
+.box-handle {
+	position: absolute;
+	opacity: 0.8;
+	cursor: ew-resize;
+	&:hover {
+		background: $brand-color;
+	}
+	z-index: 15;
+}
+.box-handle.vertical {
+	height: calc(100% + 10px);
+	width: 20px;
+	right: -10px;
+	top: -5px;
+}
+.box-handle.horizontal {
+	height: 20px;
+	width: calc(100% + 10px);
+	bottom: -10px;
+	left: -5px;
+	cursor: ns-resize;
+}
+.rectangle-text-box {
+	font-family: $fit, $fit-fallback;
+	font-size: 100px;
+	font-variation-settings: 'wdth' 150;
+	line-height: 0.75;
+}
+#canvas {
+	// background: red;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+}

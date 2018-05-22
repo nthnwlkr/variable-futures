@@ -1,16 +1,12 @@
 ---
-<!-- layout: default -->
+layout: tool
 ---
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html -%}
-  <body class="{{page.body-class}}">
-    <!-- {%- include header.html -%} -->
     <main class="tool-main page-content" aria-label="Content">
     	<div class="ui-elements-container">
     		<div class="site-wrapper">
     			<div class="axis-controls-section">
     				<div class="axis-switch-block">
-              <h2 class="ui-section-label">Select axes</h2> 
+              <h2 class="ui-section-label">Customise axes</h2> 
               <div class="switch-container">
                 <div class="switch switch-horizontal">
                   <div class="switch-icon"></div>
@@ -43,7 +39,7 @@
                 <form action="" class="syntax-options">
                   {% for item in page.code_types %}
                   <div class="syntax-radio-container">
-                    <input type="radio" class="syntax-radio {{item}}" name="syntax-option" value="{{item}}" {% if item == 'css' %} checked="checked" {% endif %}>
+                    <input type="radio" onchange="onSyntaxChange(this)" class="syntax-radio {{item}}" name="syntax-option" value="{{item}}" {% if item == 'css' %} checked="checked" {% endif %}>
                     <p class="radio-label">{{item | capitalize}}</p>
                   </div>
                   {% endfor %}
@@ -87,9 +83,6 @@
 
     <!-- {%- include footer.html -%} -->
 
-  </body>
   <script src="{{ "/assets/js/crosshair-drag.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/mouse-trail.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/code-export.js" | relative_url }}"></script>
-
-</html>

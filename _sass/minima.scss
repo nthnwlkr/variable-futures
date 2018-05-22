@@ -3,10 +3,20 @@
 	font-family: "kairos";
 	src: url('/assets/fonts/KairosSans_Variable.ttf');
 }
+@font-face {
+  font-family: "fit";
+  src: url('/assets/fonts/Fit-Variable.woff2');
+}
+@font-face {
+  font-family: "fit-fallback";
+  src: url('/assets/fonts/Fit-Regular.woff2');
+}
 // Define defaults for each variable.
 $base-font-family: -apple-system, BlinkMacSystemFont;
 $mono-font-family: 'Source Code Pro', monospace;
 $sans-font-family: "kairos";
+$fit:              "fit";
+$fit-fallback:     "fit-fallback";
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -23,7 +33,7 @@ $background-color: #fdfdfd !default;
 // $brand-color:      #ff2e2e !default;
 $brand-color:      #9b1acd !default;
 $white:            #fff;
-$black: 					 #000;
+$black: 		   #000;
 $blue:             #0000ff;
 $red:              #ff2e2e;
 
@@ -56,9 +66,13 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
+html {
+	color: $white;
+}
 // Import partials.
 @import
   "minima/_reset.scss",
   "minima/_layout.scss",
-  "minima/_code-export.scss"
+  "minima/_code-export.scss",
+  "minima/_draw-box.scss"
 ;
