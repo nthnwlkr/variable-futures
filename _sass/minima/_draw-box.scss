@@ -10,21 +10,65 @@ body.draw-tool {
 	// background: white;
 	border: 1px solid $brand-color;
 	position: absolute;
+	z-index: 12;
+	width: auto;
+	&:hover {
+		cursor: text;
+		> .close-button {
+			display: block;
+		}
+	}
+}
+.close-button {
+	left: -12px;
+	top: -12px;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	border-radius: 50px;
+	background-color: black;
+	background-image: url('/assets/images/close-icon.svg');
+	background-position: center center;
+	background-size: 10px;
+	background-repeat: no-repeat;
+	display: none;
+	&:hover {
+		cursor: pointer !important;
+		background-color: red;
+	}
 }
 .box-handle {
 	position: absolute;
 	opacity: 0.8;
 	cursor: ew-resize;
 	&:hover {
-		background: $brand-color;
+		background: lighten($brand-color, 20%);
+		& ~ .rectangle-text-box {
+			color: $brand-color;
+		}
 	}
 	z-index: 15;
 }
 .box-handle.vertical {
 	height: calc(100% + 10px);
-	width: 20px;
-	right: -10px;
+	background-image: url('/assets/images/resize-arrow.svg');
+	background-position: center center;
+	background-size: 18px;
+	background-repeat: no-repeat;
+	width: 30px;
+	right: -30px;
 	top: -5px;
+	&:before {
+		content: 'resize me';
+		position: absolute;
+		width: auto;
+		top: 50%;
+		transform: translateY(-50%);
+		margin: auto;
+		right: -80px;
+		padding: 10px;
+		background: black;
+	}
 }
 .box-handle.horizontal {
 	height: 20px;
@@ -38,6 +82,12 @@ body.draw-tool {
 	font-size: 100px;
 	font-variation-settings: 'wdth' 150;
 	line-height: 0.75;
+	&:hover {
+		color: $brand-color;
+	}
+}
+.rectangle-text-box.focus {
+	color: $brand-color;
 }
 #canvas {
 	// background: red;
