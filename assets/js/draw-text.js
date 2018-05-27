@@ -99,6 +99,13 @@ function initDraw(canvas) {
     })
     canvas.onmousedown = function (e) {
         canvas.onmouseup = function(){
+            setTimeout(function(){ 
+                if ($('.rectangle').length) {
+                    $('.explanation').addClass('hide');
+                } else {
+                    $('.explanation').removeClass('hide');
+                }
+            }, 100);
             element = null;
         }
         if (element !== null) {
