@@ -98,11 +98,14 @@ function initDraw(canvas) {
         parent.parentNode.removeChild(parent);
     })
     canvas.onmousedown = function (e) {
+        setTimeout(function(){ 
+            if ($('.rectangle').length) {
+                $('.explanation').addClass('hide');
+            }
+        }, 100);
         canvas.onmouseup = function(){
             setTimeout(function(){ 
-                if ($('.rectangle').length) {
-                    $('.explanation').addClass('hide');
-                } else {
+                if ( ! ($('.rectangle').length)) {
                     $('.explanation').removeClass('hide');
                 }
             }, 100);
