@@ -11,6 +11,10 @@
   font-family: "fit-fallback";
   src: url('/assets/fonts/Fit-Regular.woff2');
 }
+@font-face {
+  font-family: "league-mono";
+  src: url('/assets/fonts/LeagueMonoVariable.ttf')
+}
 // Define defaults for each variable.
 $base-font-family: -apple-system, BlinkMacSystemFont;
 $mono-font-family: 'Source Code Pro', monospace;
@@ -71,6 +75,7 @@ html {
 }
 // Import partials.
 @import
+  "minima/_main.scss",
   "minima/_reset.scss",
   "minima/_layout.scss",
   "minima/_code-export.scss",

@@ -1,0 +1,38 @@
+body {
+	width: 100vw;
+}
+.hover-columns-container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	position: absolute;
+	z-index: 10;
+}
+.hover-column {
+	width: calc(100% / 15);
+}
+.intro-tool-container {
+	width: 100%;
+	height: 100vh;
+	background: $dark-grey;
+}
+.intro-letters-container {
+	font-family: league-mono;
+	text-transform: uppercase;
+}
+.intro-letter {
+	color: $white;
+	text-align: center;
+	font-size: 40vw;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+	display: none;
+	font-variation-settings: 'wght' 500;
+}
+.intro-letter.wght-reset {
+	font-variation-settings: 'wght' 100 !important;
+}
