@@ -5,25 +5,25 @@ $(document).ready(function(){
 		columnWidth = hoverColumn.outerWidth(),
 		scrollDistance = $(window).scrollTop(),
 		winheight = $(window).height(),
+		vh = ($(window).height()/100),
 		scrollPercent = parseInt(scrollDistance/(winheight)*100),
-		docHeight = $(document).height();
+		docHeight = $(document).height(),
+		titleOffset = $('.text-container')[0].getBoundingClientRect().top;
+		console.log(titleOffset - scrollDistance);
 	$(window).scroll(function() {    
 		scrollDistance = $(window).scrollTop();
 		scrollPercent = parseInt(scrollDistance/(winheight)*100);
-		if (scrollPercent < 2) {
-			$('.final-column').on('mouseout', function(f) {
-				// $('.title-letter')[0].setAttribute('style', "font-variation-settings: 'wght' 800 !important");
-			});
-		}
-		console.log(scrollPercent);
 		if (scrollPercent > 99) {
 			$('.site-nav')[0].classList.add('fixed');
+			$('.text-container').css("margin-top", (titleOffset - (11 * vh)) );
 			$('.section-two-container')[0].classList.add('scrolled');
 			$('.text-container')[0].classList.remove('fixed');
 		}else {
 			$('.site-nav')[0].classList.remove('fixed');
 			$('.section-two-container')[0].classList.remove('scrolled');
 			$('.text-container')[0].classList.add('fixed');
+			$('.text-container').css("margin-top", 'auto' );
+
 		}
 	});
 

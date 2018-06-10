@@ -1,8 +1,19 @@
+body.experiments-page {
+	.nav-link {
+		color: $brand-color;
+	}
+}
 .site-nav {
 	margin: -8px 0 0 -4px;
-	position: relative;
+	position: fixed;
+	top: 0;
 	z-index: 15;
 	width: calc(100vw + 7px);
+}
+body.home-page {
+	.site-nav {
+		position: relative;
+	}
 }
 .site-nav.fixed {
 	top: 0;
@@ -18,10 +29,24 @@
 	color: $dark-grey;
 	font-family: $sans-font-family;
 	font-size: 36px;
-	font-variation-settings: 'wght' 600, 'wdth' 700;
+	font-variation-settings: 'wght' 500, 'wdth' 120;
 	transition: font-variation-settings 200ms ease;
 	// margin-right: 70px;
 	&:hover {
 		font-variation-settings: 'wght' 700, 'wdth' 700;
+	}
+}
+.nav-link.active {
+	font-variation-settings: 'wght' 700, 'wdth' 700;
+	position: relative;
+	&:before {
+		// content: '';
+		width: 100%;
+		height: 3px; 
+		background: $dark-grey;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 }

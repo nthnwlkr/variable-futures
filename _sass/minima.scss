@@ -19,10 +19,16 @@
   font-family: "source-serif";
   src: url('/assets/fonts/SourceSerifVariable-Roman.ttf')
 }
+@font-face {
+  font-family: "zycon";
+  src: url('/assets/fonts/Zycon.ttf')
+}
 // Define defaults for each variable.
 $base-font-family: -apple-system, BlinkMacSystemFont;
-$mono-font-family: 'Source Code Pro', monospace;
+$mono-font-family: 'league-mono', monospace;
 $sans-font-family: "kairos";
+$league:           "league-mono";
+$zycon:            "zycon";
 $fit:              "fit";
 $fit-fallback:     "fit-fallback";
 $serif:            "source-serif";
@@ -85,5 +91,6 @@ html {
   "minima/_nav.scss",
   "minima/_layout.scss",
   "minima/_code-export.scss",
+  "minima/_experiments.scss",
   "minima/_draw-box.scss"
 ;

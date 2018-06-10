@@ -1,0 +1,71 @@
+body.experiments-page {
+	background: $dark-grey;
+}
+.page-title {
+	font-size: 2vw;
+	font-family: $serif;
+	word-break: break-word;
+	// text-transform: uppercase;
+	text-align: left;
+	font-variation-settings: 'wdth' 150, 'wght' 500 !important;
+	color: $brand-color;
+}
+.tools-list-container {
+	margin-left: 5vw;
+	margin-top: 4vw;
+}
+.tool-item {
+	list-style-type: none;
+	position: relative;
+}
+.page-description {
+	margin-left: 5.3vw;
+	margin-top: 6vw;
+	font-size: 8vw;
+	font-family: $serif;
+	opacity: 0.1;
+}
+.tool-link {
+	font-size: 8vw;
+	font-family: $sans-font-family;
+	font-variation-settings: 'wdth' 100, 'wght' 500;
+	text-decoration: none;
+	color: $white;
+	// position: relative;
+	transition: font-variation-settings 100ms ease; 
+	&:before {
+		content: '';
+		mix-blend-mode: difference;
+		width: 30vw;
+		height: 40vw;
+		position: fixed;
+		// left: 0;
+		// right: 20vw;
+		top: 0vh;
+		background-size: contain;
+		display: none;
+		pointer-events: none;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&:hover:before {
+		display: block;
+	}
+	&:hover {
+		color: $brand-color;
+		font-variation-settings: 'wdth' 120, 'wght' 600;
+	}
+}
+.tool-item {
+	margin-bottom: 2vw;
+	$elements: 15;
+	@for $i from 0 to $elements {
+		&:nth-of-type(#{$i + 1}) .tool-link:before {
+	    	background-image: url('/assets/images/experiments/ex#{$i + 1}.jpg');
+	    	left: #{($i * 80) + 100}px;
+		}
+		&:nth-of-type(odd) .tool-link:before {
+			top: #{$i * 10}px;
+		}
+	}
+}
