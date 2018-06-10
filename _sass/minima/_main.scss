@@ -9,30 +9,118 @@ body {
 	z-index: 10;
 }
 .hover-column {
-	width: calc(100% / 15);
+	width: calc(100% / 16);
 }
 .intro-tool-container {
 	width: 100%;
 	height: 100vh;
 	background: $dark-grey;
+	position: relative;
+	z-index: 5;
 }
 .intro-letters-container {
-	font-family: league-mono;
-	text-transform: uppercase;
+	width: 100%;
+	height: 100vh;
 }
 .intro-letter {
+	text-transform: uppercase;
+	font-family: league-mono;
 	color: $white;
 	text-align: center;
 	font-size: 40vw;
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
+	top: 50%;
+	transform: translateY(-53%);
+	// bottom: 0;
+	// height: auto;
+	margin: auto;
 	z-index: 5;
+	line-height: 1;
 	display: none;
 	font-variation-settings: 'wght' 500;
+	user-select: none;
+}
+.final-letter {
+	font-size: 20vw;
+	text-align: left;
+	font-variation-settings: 'wght' 800 !important;
+	span {
+		font-size: 5vw;
+		font-family: $serif;
+		text-transform: capitalize;
+		top: -10vh;
+	}
+}
+.final-weight-force {
+	font-variation-settings: 'wght' 800 !important;
 }
 .intro-letter.wght-reset {
 	font-variation-settings: 'wght' 100 !important;
+}
+.final-letter.wght-reset {
+	font-variation-settings: 'wght' 800 !important;
+}
+.section-2 {
+	width: 100vw;
+	height: 200vh;
+	background: $brand-color;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
+}
+.section-two-title {
+	display: block !important;
+}
+.fixed-title-scroll-container {
+	position: absolute;
+	clip: rect(0, auto, auto, 0);
+	clip-path: inset(0 0 0 0);
+	width: 100%;
+	height: 100%;
+	top: 0;	
+	left: 0;
+}
+.section-two-container.scrolled {
+	position: relative !important;
+	margin-top: 6.8vw !important;
+	top: auto !important;
+	.text-container {
+		transform: none;
+	}
+	.final-letter {
+		position: relative;
+		transform: none;
+		top: 0;
+	}
+	.subtitle {
+		margin: -13.8vw 2.75vw 0px 0px;
+	}
+}
+.section-two-title {
+	display: block;
+	color: $red;
+	font-variation-settings: 'wght' 800 !important;
+}
+.text-container {
+	width: 100%;
+	height: auto;
+	top: 50%;
+	transform: translateY(-50%);	
+}
+.subtitle {
+	color: $dark-grey;
+	// opacity: 0.5;
+	color: darken($brand-color, 100%);
+	font-family: $serif;
+	margin: 19.5vw 2.75vw 0 0;
+	font-variation-settings: 'wght' 500;
+	font-size: 2.3vw;
+	text-align: left;
+	float: right;
+	transform: rotate(-90deg);
+}
+.fixed {
+	position: fixed !important;
 }

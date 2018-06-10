@@ -15,12 +15,17 @@
   font-family: "league-mono";
   src: url('/assets/fonts/LeagueMonoVariable.ttf')
 }
+@font-face {
+  font-family: "source-serif";
+  src: url('/assets/fonts/SourceSerifVariable-Roman.ttf')
+}
 // Define defaults for each variable.
 $base-font-family: -apple-system, BlinkMacSystemFont;
 $mono-font-family: 'Source Code Pro', monospace;
 $sans-font-family: "kairos";
 $fit:              "fit";
 $fit-fallback:     "fit-fallback";
+$serif:            "source-serif";
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -75,8 +80,9 @@ html {
 }
 // Import partials.
 @import
-  "minima/_main.scss",
   "minima/_reset.scss",
+  "minima/_main.scss",
+  "minima/_nav.scss",
   "minima/_layout.scss",
   "minima/_code-export.scss",
   "minima/_draw-box.scss"

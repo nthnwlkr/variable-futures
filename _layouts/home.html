@@ -4,8 +4,8 @@ layout: default
 
 <div class="intro-tool-container">
   <div class="hover-columns-container">
-    {% for i in (1..15) %}
-    <div class="hover-column column-{{i}}"></div>
+    {% for i in (1..16) %}
+    <div class="hover-column column-{{i}} {% if i == 16%}final-column{% endif %}"></div>
     {% endfor %}
   </div>
   <div class="intro-letters-container">
@@ -24,6 +24,26 @@ layout: default
     <p class="intro-letter">r</p>
     <p class="intro-letter">e</p>
     <p class="intro-letter">s</p>
+    <div class="fixed-title-scroll-container fixed">
+      <p class="intro-letter final-letter">variable<br>futures<br>
+    </div>
+    </p>
   </div>
 </div>
+<div class="section-2">
+  <div class="site-wrapper">
+    {%- include header.html -%}
+    <div class="fixed-title-scroll-container section-two-container">
+      <div class="text-container fixed">
+        <p class="title-letter intro-letter final-letter section-two-title">variable<br>futures<br></p>
+        <p class="subtitle">A<br>Typographic<br>Exploration</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <script src="assets/js/intro.js"></script>

@@ -1,0 +1,27 @@
+.site-nav {
+	margin: -8px 0 0 -4px;
+	position: relative;
+	z-index: 15;
+	width: calc(100vw + 7px);
+}
+.site-nav.fixed {
+	top: 0;
+}
+.navigation-list {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+}
+.nav-link {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $dark-grey;
+	font-family: $sans-font-family;
+	font-size: 36px;
+	font-variation-settings: 'wght' 600, 'wdth' 700;
+	transition: font-variation-settings 200ms ease;
+	// margin-right: 70px;
+	&:hover {
+		font-variation-settings: 'wght' 700, 'wdth' 700;
+	}
+}
