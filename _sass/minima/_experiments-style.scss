@@ -1,0 +1,850 @@
+/* Global Variables */
+:root {
+	--red: #fd3537;
+	--yellow: #fffdc2;
+	--white: #FFFFFF;
+	--black: #000000;
+	--loadingTextBoxWidth: 500px; /* Default to be overridden by js */
+}
+
+/* Font Imports */
+/* Global Styling */
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: $white;
+	height: 100vh;
+}
+
+
+a {
+	text-decoration: none;
+	list-style: none;
+}
+.close-icon {
+	position: fixed;
+	background-image: url('images/close-icon.svg');
+	background-size: cover;
+	width: 23px;
+	height: 23px;
+	top: 20px;
+	right: 20px;
+	z-index: 200;
+}
+.experiment-section {
+	background-color: $red;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+.text-box {
+	font-family: $avenir;
+    font-size: 148px;
+    font-variation-settings: 'wght' 700, 'wdth' 150;
+}
+// .arrow {
+// 	position: fixed;
+// 	bottom: 25px;
+// 	z-index: 15;
+// 	color: $white;
+// 	text-align: center;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	width: 85px;
+// 	height: 85px;
+// 	background: rgba(0,0,0,0.5);
+// 	font-size: 40px;
+// 	border-radius: 50px;
+// 	font-family: $sans-font-family;
+// }
+// .next {
+// 	right: 25px;
+// }
+// .previous {
+// 	left: 25px;
+// }
+.arrow {
+	position: fixed;
+	width: 50vw;
+	top: 0;
+	bottom: 0;
+	z-index: 15;
+	color: $white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// background: rgba(0,0,0,0.5);
+	font-size: 40px;
+	font-family: $sans-font-family;
+}
+body.e1 .next {
+	width: 100vw;
+}
+body.e8 .previous {
+	width: 100vw;
+}
+.next {
+	right: 0;
+	cursor: url("images/right-arrow.png"), e-resize;
+}
+.previous {
+	left: 0;
+	cursor: url("images/left-arrow.png"), w-resize;
+}
+
+/*Experiment 1*/
+@keyframes loadingAnimation {
+	0% {
+		font-variation-settings: 'wght' 700, 'wdth' 150;
+	}
+	30% {
+		font-variation-settings: 'wght' 400, 'wdth' 75;
+	}
+	70% {
+		font-variation-settings: 'wght' 400, 'wdth' 75;
+	}
+	100% {
+		font-variation-settings: 'wght' 700, 'wdth' 150;
+	}
+}
+@keyframes moving {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: calc(100vw - ((var(--loadingTextBoxWidth))*1px));
+	}
+	100%{
+		left: 0;
+	}
+}
+.text-container-1 {
+	position: absolute;
+	left: 0;
+	animation: moving 4500ms infinite;
+}
+.text-1 {
+    animation: loadingAnimation 2250ms infinite;
+}
+
+
+/* Experiment 2 */
+body.e2 {
+	height: 400vh;
+}
+.experiment-2 {
+	background: $dark-grey;
+	z-index: 10;
+}
+.text-2 {
+	color: $brand-color;
+	text-align: center;
+	font-size: 100px;
+	font-variation-settings: 'wght' 400, 'wdth' 300;
+}
+.fixed {
+	position: fixed;
+}
+.experiment-section.fixed {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+/*Experiment 3*/
+.experiment-3 {
+	background: $white;
+	animation: colorBeat 2s infinite;
+}
+.text-3 {
+	transform: scale(1,1);
+	font-variation-settings: 'wght' 450, 'wdth' 300;
+	animation: beat 2s infinite;
+	color: $dark-grey;
+	line-height: 0.7;
+	font-size: 250px;
+	margin-top: -40px;
+}
+.text-3.v2 {
+	transform: scale(0.8,0.8);
+	left: 0;
+}
+@keyframes colorBeat {
+	5%{
+		background: red;
+	}
+	20% {
+		background: green;
+	}
+	25%{
+		background: blue;
+	}
+	40% {
+		background: yellow;
+	}
+	45%{
+		background: purple;
+	}
+	60% {
+		background: orange;
+	}
+	65%{
+		background: white;
+	}
+	80% {
+		background: pink;
+	}
+	85%{
+		background: turquoise;
+	}
+	100% {
+		background: black;
+	}
+}
+@keyframes beat {
+	5% {
+		font-variation-settings: 'wght' 900, 'wdth' 300;
+		transform: scale(1.1, 1.1);
+		color: $white;
+	}
+	13% {
+		transform: scale(1.075, 1.075);
+	}
+	20% {
+		font-variation-settings: 'wght' 450, 'wdth' 300;
+		transform: scale(1,1);
+		color: $dark-grey;
+	}
+	25% {
+		font-variation-settings: 'wght' 900, 'wdth' 300;
+		transform: scale(1.1, 1.1);
+		color: $white;
+	}
+	33% {
+		transform: scale(1.075, 1.075);
+	}
+	40% {
+		font-variation-settings: 'wght' 450, 'wdth' 300;
+		transform: scale(1,1);
+		color: $dark-grey;
+	}
+	45% {
+		font-variation-settings: 'wght' 900, 'wdth' 300;
+		transform: scale(1.1, 1.1);
+		color: $white;
+	}
+	53% {
+		transform: scale(1.075, 1.075);
+	}
+	60% {
+		font-variation-settings: 'wght' 450, 'wdth' 300;
+		transform: scale(1,1);
+		color: $dark-grey;
+	}
+	65% {
+		font-variation-settings: 'wght' 900, 'wdth' 300;
+		transform: scale(1.1, 1.1);
+		color: $white;
+	}
+	73% {
+		transform: scale(1.075, 1.075);
+	}
+	80% {
+		font-variation-settings: 'wght' 450, 'wdth' 300;
+		transform: scale(1,1);
+		color: $dark-grey;
+	}
+	85% {
+		font-variation-settings: 'wght' 900, 'wdth' 300;
+		transform: scale(1.1, 1.1);
+		color: $white;
+	}
+	93% {
+		transform: scale(1.075, 1.075);
+	}
+	100% {
+		font-variation-settings: 'wght' 450, 'wdth' 300;
+		transform: scale(1,1);
+		color: $dark-grey;
+	}
+}
+/*Experiment 4*/
+.experiment-4 {
+	display: block;
+}
+.text-container-4 {
+	font-size: 137.5px;
+	animation: textGrow 5s infinite;
+}
+.text-4 {
+	font-family: 'Fit Variable';
+	font-size: inherit;
+	font-variation-settings: 'wdth' 100;
+	font-weight: 400;
+	animation: shiftGrow 5s infinite;
+	transform-origin: top left;
+	line-height: 0.8;
+	margin-top: -2px;
+	/*letter-spacing: 10px;*/
+}
+@keyframes textGrow {
+	30% {
+		font-size: 137.5px;
+	}
+	75% {
+		font-size: 705px;
+	}
+	100% {
+		font-size: 705px;
+	}
+}
+@keyframes shiftGrow {
+	30% {
+		font-variation-settings: 'wdth' 600;
+	}
+	50% {
+		
+		font-variation-settings: 'wdth' 600;
+	}
+/*	79% {
+		font-size: 1025px;
+		font-variation-settings: 'wdth' 110;
+	}*/
+	100% {
+		font-variation-settings: 'wdth' 111;
+		/*font-size: 1025px;*/
+	}
+
+}
+@keyframes catMove {
+	0% {
+		transform: translateX(-50%);
+	}
+	15% {
+		transform: translateX(-30%);
+	}
+	20% {
+		transform: translateX(-30%);
+	}
+	35% {
+		transform: translateX(-10%);
+	}	
+	40% {
+		transform: translateX(-10%);
+	}
+	55% {
+		transform: translateX(10%);
+	}
+	60% {
+		transform: translateX(10%);
+	}
+	75% {
+		transform: translateX(30%);
+	}
+	80% {
+		transform: translateX(30%);
+	}
+	95% {
+		transform: translateX(50%);
+	}
+	100%{
+		transform: translateX(50%);
+	}
+}
+@keyframes caterpillar {
+	0%{
+		font-variation-settings: 'wght' 400, 'wdth' 75;
+		transform: translateY(0px);
+	}
+	40% {
+		transform: translateY(-40px);
+	}
+	50% {
+		font-variation-settings: 'wght' 900, 'wdth' 100;
+	}
+	60% {
+		transform: translateY(0px);
+	}
+	100%{
+		font-variation-settings: 'wght' 400, 'wdth' 75;
+	}
+}
+.experiment-5 {
+	background-color: $dark-grey;
+}
+.text-5 {
+	animation: catMove 5500ms infinite;
+	animation-direction: alternate;
+	color: $red;
+}
+.text-5 span {
+	display: inline-block;
+	transition: transform 100ms;
+}
+/*.text-5 span:hover {
+	transform: translateY(-20px);
+}*/
+.text-5 > span:nth-child(1){
+	font-variation-settings: 'wght' 400, 'wdth' 75;
+	animation: caterpillar 1050ms infinite 50ms;
+}
+.text-5 > span:nth-child(2){
+	font-variation-settings: 'wght' 500, 'wdth' 80;
+	animation: caterpillar 1050ms infinite 100ms;
+}
+.text-5 > span:nth-child(3){
+	font-variation-settings: 'wght' 600, 'wdth' 85;
+	animation: caterpillar 1050ms infinite 150ms;
+}
+.text-5 > span:nth-child(4){
+	font-variation-settings: 'wght' 700, 'wdth' 90;
+	animation: caterpillar 1050ms infinite 200ms;
+}
+.text-5 > span:nth-child(5){
+	font-variation-settings: 'wght' 800, 'wdth' 95;
+	animation: caterpillar 1050ms infinite 250ms;
+}
+.text-5 > span:nth-child(6){
+	font-variation-settings: 'wght' 900, 'wdth' 100;
+	animation: caterpillar 1050ms infinite 300ms;
+}
+.text-5 > span:nth-child(7){
+	font-variation-settings: 'wght' 800, 'wdth' 95;
+	animation: caterpillar 1050ms infinite 350ms;
+}
+.text-5 > span:nth-child(8){
+	font-variation-settings: 'wght' 700, 'wdth' 90;
+	animation: caterpillar 1050ms infinite 400ms;
+}
+.text-5 > span:nth-child(9){
+	font-variation-settings: 'wght' 600, 'wdth' 85;
+	animation: caterpillar 1050ms infinite 450ms;
+}
+.text-5 > span:nth-child(10){
+	font-variation-settings: 'wght' 500, 'wdth' 80;
+	animation: caterpillar 1050ms infinite 500ms;
+}
+.text-5 > span:nth-child(11){
+	font-variation-settings: 'wght' 400, 'wdth' 75;
+	animation: caterpillar 1050ms infinite 550ms;
+}
+
+@keyframes sway {
+	0% {
+		left: 48%;
+		/*top: 10%;*/
+	}
+	50% {
+		/*top: 15%;*/
+	}
+	100% {
+		left: 70%;
+		/*top: 5%;*/
+	}
+}
+
+@keyframes sway_two {
+	0% {
+		left: 8%;
+		/*top: 10%;*/
+	}
+	50% {
+		/*top: 15%;*/
+	}
+	100% {
+		left: 30%;
+		/*top: 5%;*/
+	}
+}
+.text-box-2 .layer-1 {
+	animation: sway_two 1200ms infinite 700ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-2 {
+	animation: sway_two 1200ms infinite 600ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-3 {
+	animation: sway_two 1200ms infinite 500ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-4 {
+	animation: sway_two 1200ms infinite 400ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-5 {
+	animation: sway_two 1200ms infinite 300ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-6 {
+	animation: sway_two 1200ms infinite 200ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-7 {
+	animation: sway_two 1200ms infinite 100ms !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2 .layer-8 {
+	animation: sway_two 1200ms infinite !important ;
+	animation-direction: alternate !important;
+}
+.text-box-2  > * {
+	animation-direction: alternate !important;
+}
+.experiment-6 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: $black;
+}
+.text-container-6 {
+	font-size: 100px;
+	position: absolute;
+	/*animation: sway 2000ms infinite;*/
+}
+.text-container-6 .text-box {
+	line-height: 1;
+	font-size: 70px;
+	letter-spacing: 0px;
+	color: #ececec;
+
+}
+.text-box-1 {
+	margin-top: -40%;
+}
+.text-box-2 {
+	margin-top: -40%;
+	margin-left: -49%;
+}
+.layer-1 {
+	animation: sway 1200ms infinite 700ms;
+	animation-direction: alternate;
+}
+.layer-1 .text-box {
+	font-variation-settings: 'wght' 900;
+}
+.layer-2 {
+	transform: scale(0.93,0.93);
+	opacity: 0.8;
+	animation: sway 1200ms infinite 600ms;
+	animation-direction: alternate;
+}
+.layer-2 .text-box {
+	font-variation-settings: 'wght' 850;
+}
+.layer-3 {
+	transform: scale(0.87,0.87);
+	opacity: 0.6;
+	animation: sway 1200ms infinite 500ms;
+	animation-direction: alternate;
+}
+.layer-3 .text-box {
+	font-variation-settings: 'wght' 800;
+}
+.layer-4 {
+	transform: scale(0.82,0.82);
+	opacity: 0.5;
+	animation: sway 1200ms infinite 400ms;
+	animation-direction: alternate;
+}
+.layer-4 .text-box {
+	font-variation-settings: 'wght' 750;
+}
+.layer-5 {
+	transform: scale(0.77,0.77);
+	opacity: 0.4;
+	animation: sway 1200ms infinite 300ms;
+	animation-direction: alternate;
+}
+.layer-5 .text-box {
+	font-variation-settings: 'wght' 700;
+}
+.layer-6 {
+	transform: scale(0.72,0.72);
+	opacity: 0.3;
+	animation: sway 1200ms infinite 200ms;
+	animation-direction: alternate;
+}
+.layer-6 .text-box {
+	font-variation-settings: 'wght' 650;
+}
+.layer-7 {
+	transform: scale(0.67,0.67);
+	opacity: 0.4;
+	animation: sway 1200ms infinite 100ms;
+	animation-direction: alternate;
+}
+.layer-7 .text-box {
+	font-variation-settings: 'wght' 600;
+}
+.layer-8 {
+	transform: scale(0.62,0.62);
+	opacity: 0.4;
+	animation: sway 1200ms infinite;
+	animation-direction: alternate;
+}
+.layer-8 .text-box {
+	font-variation-settings: 'wght' 550;
+}
+
+
+
+
+.experiment-7 {
+	background: $dark-grey;
+}
+.text-container-7 {
+	width: 500px;
+	height: 600px;
+	background: $white;
+	position: relative;
+}
+.text-container-7 .text-box, .top-box, .bottom-box {
+	font-family: 'Fit Variable';
+	color: white;
+	transition: width 300ms ease, height 300ms ease;
+	overflow: hidden;
+	position: relative;
+}
+.text-container-7 .text-box h1 {
+	transition: font-size 300ms ease, font-variation-settings 300ms ease, margin 300ms ease;
+}
+.text-container-7 .h h1 {
+	transition: font-size 300ms ease, font-variation-settings 280ms ease, margin 300ms ease !important;
+}
+.text-container-7.animation-has-occurred .t h1, .text-container-7.animation-has-occurred .f h1 {
+	transition: font-size 300ms ease, font-variation-settings 225ms ease, margin 300ms ease !important;
+}
+.text-container-7 h1 {
+	font-weight: 400;
+	font-variation-settings: 'wdth' 400;
+	line-height: 1;
+}	
+.top-box {
+	width: 100%;
+	height: calc(100%/3*2);
+	background: black;
+}
+.animation-has-occurred .top-box {
+	height: 75%;
+}
+.animation-state-3 .top-box {
+	height: 50%;
+}
+.s {
+	width: calc(100%/3*2);
+	height: 100%;
+	background: blue;
+	float: left;
+}
+.animation-has-occurred .s {
+	width: 50%;
+}
+.animation-state-3 .s {
+	width: 25%;
+	height: 100%;
+}
+.s h1 {
+	font-variation-settings: 'wdth' 258 !important;
+	font-size: 503px;
+	margin-top: -51px;
+	margin-left: 6px;
+}
+.animation-has-occurred .s h1 {
+    font-variation-settings: 'wdth' 161 !important;
+    font-size: 571px;
+    margin-top: -62px;
+    margin-left: 6px;
+}
+.animation-state-3 .s h1 {
+	font-variation-settings: 'wdth' 108 !important;
+    font-size: 376px;
+    margin-top: -39px;
+    margin-left: 6px;
+}
+.h, .i {
+	width: calc(100%/3);
+	height: 50%;
+	background: red;
+	float: left;
+}
+.h:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 12px;
+	z-index: 100;
+	right: 0;
+	top: 0;
+	background: red;
+}
+.h h1 {
+	font-size: 235px;
+	margin-top: -18px;
+	margin-left: 8px;
+	font-variation-settings: 'wdth' 254 !important;
+}
+.animation-has-occurred .h {
+	width: 50%;
+	height: calc(100%/3);
+}
+.animation-has-occurred .h h1 {
+    font-size: 172px;
+    margin-top: -11px;
+    margin-left: 8px;
+    font-variation-settings: 'wdth' 572 !important;
+}
+.animation-state-3 .h h1 {
+    font-variation-settings: 'wdth' 894 !important;
+}
+.i {
+	background: green;
+}
+.i:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 12px;
+	z-index: 100;
+	right: 0;
+	top: 0;
+	background: green;
+}
+.animation-has-occurred .i {
+	width: 50%;
+	height: calc(100%/3*2);
+}
+.i h1 {
+	font-size: 235px;
+	margin-top: -18px;
+	margin-left: -8px;
+	font-variation-settings: 'wdth' 495 !important;
+    transform-origin: left;
+    transform: scale(10, 1);
+}
+.animation-has-occurred .i h1 {
+	font-size: 369px;
+    margin-top: -34px;
+    margin-left: -18px;
+    font-variation-settings: 'wdth' 491 !important;
+    transform: scale(10, 1);
+}
+.animation-state-3 .h, .animation-state-3 .i {
+	width: 75%;
+	height: 50%;
+}
+.animation-state-3 .i h1 {
+	font-size: 175px;
+    margin-top: -12px;
+    margin-left: -4px;
+    font-variation-settings: 'wdth' 1000 !important;
+    transform: scale(10, 1);
+}
+.bottom-box {
+	width: 100%;
+	height: calc(100%/3);
+	background: orange;
+}
+.animation-has-occurred .bottom-box {
+	height: 25%;
+}
+.animation-state-3 .bottom-box {
+	height: 50%;
+}
+.f {
+	width: calc(100%/3);
+	height: 100%;
+	background: purple;
+	float: left;
+}
+.f:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 10px;
+	z-index: 100;
+	right: 0;
+	top: 0;
+	background: purple;
+}
+.animation-has-occurred .f, .animation-has-occurred .t {
+	width: 50%;
+}
+.animation-state-3 .f, .animation-state-3 .t {
+	width: 50%;
+}
+.f h1 {
+	font-size: 235px;
+	margin-top: -18px;
+	margin-left: 8px;
+	font-variation-settings: 'wdth' 254 !important;	
+}
+.animation-has-occurred .f h1 {
+	font-size: 170px;
+	margin-top: -9px;
+	font-variation-settings: 'wdth' 586 !important;
+}
+.animation-state-3 .f h1 {
+	font-size: 372px;
+    margin-top: -35px;
+    margin-left: 7px;
+    font-variation-settings: 'wdth' 255 !important;
+}
+.t {
+	width: calc(100%/3*2);
+	height: 100%;
+	float: left;
+	background: orange;
+}
+.t:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 10px;
+	z-index: 100;
+	right: 0;
+	top: 0;
+	background: orange;
+}
+.t h1 {
+	font-size: 235px;
+	margin-top: -18px;
+	margin-left: 10px;
+	font-variation-settings: 'wdth' 570 !important;		
+}
+.animation-has-occurred .t h1 {
+    font-size: 170px;
+    margin-top: -10px;
+    margin-left: 10px;
+    font-variation-settings: 'wdth' 575 !important;
+}
+.animation-state-3 .t h1 {
+	font-size: 371px;
+    margin-top: -36px;
+    margin-left: 7px;
+    font-variation-settings: 'wdth' 257 !important;
+}
+.experiment-8 {
+	background: $brand-color;
+}
+.text-8 {
+	font-family: 'Fit Variable';
+	font-weight: 400;
+	font-size: 300px;
+	font-variation-settings: 'wdth' 10;
+}
+.text-8 span {
+	color: $dark-grey;
+	transition: font-variation-settings 300ms ease !important;
+}
+.grow {
+	font-variation-settings: 'wdth' 230;
+}

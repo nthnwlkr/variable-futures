@@ -5,12 +5,12 @@ permalink: /experiments/
 group: "navigation"
 body_classes: experiments-page
 experiments: 
+ - Bounce
+ - Scroll It
  - Unz Unz Unz
  - Failure
  - Caterpillar
  - Stacking & Tracking
- - Bounce
- - Scroll It
  - Shapeshifter
  - Morning Coffee
 

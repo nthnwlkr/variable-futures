@@ -23,6 +23,10 @@
   font-family: "zycon";
   src: url('/assets/fonts/Zycon.ttf')
 }
+@font-face {
+    font-family: "avenir";
+    src: url("/assets/fonts/AvenirNext_Variable.ttf") format("truetype");
+}
 // Define defaults for each variable.
 $base-font-family: -apple-system, BlinkMacSystemFont;
 $mono-font-family: 'league-mono', monospace;
@@ -32,6 +36,7 @@ $zycon:            "zycon";
 $fit:              "fit";
 $fit-fallback:     "fit-fallback";
 $serif:            "source-serif";
+$avenir:           "avenir";
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -92,5 +97,6 @@ html {
   "minima/_layout.scss",
   "minima/_code-export.scss",
   "minima/_experiments.scss",
-  "minima/_draw-box.scss"
+  "minima/_draw-box.scss",
+  "minima/_experiments-style.scss"
 ;

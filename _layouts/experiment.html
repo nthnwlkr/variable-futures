@@ -2,20 +2,19 @@
 layout: default
 ---
 <!-- {% assign pages_list = site.pages %} -->
+<a href="/experiments" class="close-icon"></a>
 {% assign group = 'experiment' %}
   {% if group == page.group %}
-    {{page.index}}
     {% unless page.index == 1 or page.index == 8 %}
-	    <a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p>&rarr;</p></a>
-	    <a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p>&larr;</p></a>unless
+	    <a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p></p></a>
+	    <a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p></p></a>
     {% endunless %}
     {% if page.index == 1 %}
-     	<a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p>&rarr;</p></a>one
+     	<a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p></p></a>
     {% endif %}
     {% if page.index == 8 %}
-    	<a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p>&larr;</p></a>eight
+    	<a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p></p></a>
     {% endif %}
   {% endif %}
 {{content}}
 
-<script type="text/javascript" src="js/experiment.js"></script>

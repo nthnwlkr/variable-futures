@@ -1,13 +1,13 @@
 ---
 layout: experiment
 title: Failure
-permalink: /experiment-2/
+permalink: /experiment-2
 group: "experiment"
 index: 2
+body_classes: e2
 ---
-<section class="experiment-section experiment-1">
-	<div class="text-container-1">
-		<h1 class="text-box text-1">Loading</h1>
+<section class="experiment-section experiment-2 fixed">
+	<div class="text-container-2">
+		<h1 class="text-box text-2">Scroll up and down</h1>
 	</div>
 </section>
-<script src="js/jquery.lettering-0.6.1.min.js"></script>
