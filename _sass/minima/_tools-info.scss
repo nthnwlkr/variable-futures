@@ -1,0 +1,80 @@
+.tool-info-container {
+	width: 90vw;
+	margin: 6vw auto;
+	position: relative;
+	.img-block {
+		width: 60%;
+	}
+	.tool-img {
+		width: 100%;
+	}
+	&:last-of-type {
+		margin-top: 20vw;
+	}
+	&:before {
+		content: 'In the crosshairs';
+		color: $brand-color;
+		mix-blend-mode: difference;
+		font-family: $serif;
+		position: absolute;
+		left: -6.3vw;
+		line-height: 1;
+		top: -5vw;
+		font-size: 8vw;
+		font-variation-settings: 'wght' 700;
+		transform: rotate(90deg);
+		transform-origin: bottom left;
+	}
+	&:last-of-type:before {
+		content: 'A(bounding) Boxes'
+	}
+}
+.tool-button {
+	font-family: $league;
+	width: 35vw;
+	padding: 3vw;
+	display: block;
+	margin: 3vw auto;
+	text-align: center;
+	background: $brand-color;
+	color: $white;
+	font-size: 2vw;
+	&:hover {
+		background: $red;
+		color: $brand-color;
+	}
+}
+.content-block {
+	width: 100%;
+	display: flex;
+	margin-bottom: 7vw;
+}
+.img-caption {
+	margin-top: 2vw;
+	font-family: $serif;
+	font-size: 1.7vw;
+	color: $dark-grey;
+	display: block;
+}
+.content-block:nth-of-type(even) {
+	flex-direction: row-reverse;
+	.img-caption {
+		text-align: right;
+	}
+}
+.tool-link:before {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-size: cover;
+	width: auto;
+	height: auto;
+	mix-blend-mode: difference;
+	z-index: 300;
+}
+@for $e from 0 to 2 {
+	.tool-item:nth-of-type(#{$e + 1}) .tool-link:before {
+	    	background-image: url('/assets/images/tool-images/big-#{$e + 1}.png');
+		}
+}

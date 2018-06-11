@@ -14,7 +14,12 @@ experiments:
  - Shapeshifter
  - Morning Coffee
 
-
+description: 'Initial experiments with the OpenType CSS spec.'
 ---
-
-Initial experiments with the OpenType CSS spec. 
+<div class="experiment-list-container">
+	<ul class="experiment-list">
+		{% for item in page.experiments %}
+		<li class="experiment-item"><a href="/experiment-{{forloop.index}}" class="experiment-link">{{item}}</a></li>
+		{% endfor %}
+	</ul>
+</div>

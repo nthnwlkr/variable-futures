@@ -4,13 +4,7 @@ layout: default
 {%- include header.html -%}
 <div class="site-wrapper">
 	<div class="page-info-container">
-		<div class="page-description">{{content}}</div>
+		<div class="page-description">{{page.description}}</div>
 	</div>
-	<div class="tools-list-container">
-		<ul class="tools-list">
-			{% for item in page.experiments %}
-			<li class="tool-item"><a href="/experiment-{{forloop.index}}" class="tool-link">{{item}}</a></li>
-			{% endfor %}
-		</ul>
-	</div>
+	{{content}}
 </div>
