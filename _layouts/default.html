@@ -11,9 +11,10 @@
         {{ content }}
       </div>
     </main>
-
-    {%- include footer.html -%}
-
+    {% assign current = page.url | downcase | split: '/' %}
+    {% unless current[1] contains 'experiment-' %}
+      {%- include footer.html -%}
+    {% endunless %}
   </body>
 
 </html>

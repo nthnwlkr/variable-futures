@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<!-- {% assign pages_list = site.pages %} -->
+{% assign group = 'experiment' %}
+  {% if group == page.group %}
+    {{page.index}}
+    {% unless page.index == 1 or page.index == 8 %}
+	    <a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p>&rarr;</p></a>
+	    <a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p>&larr;</p></a>unless
+    {% endunless %}
+    {% if page.index == 1 %}
+     	<a href="/experiment-{{page.index|plus:1}}" class="arrow next"><p>&rarr;</p></a>one
+    {% endif %}
+    {% if page.index == 8 %}
+    	<a href="/experiment-{{page.index|minus:1}}" class="arrow previous"><p>&larr;</p></a>eight
+    {% endif %}
+  {% endif %}
+{{content}}
+
+<script type="text/javascript" src="js/experiment.js"></script>
