@@ -836,7 +836,7 @@ body.e2 {
 	background: $brand-color;
 }
 .text-8 {
-	font-family: 'Fit Variable';
+	font-family: $fit, $fit-fallback;
 	font-weight: 400;
 	font-size: 300px;
 	font-variation-settings: 'wdth' 10;
