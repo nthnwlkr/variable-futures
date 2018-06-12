@@ -16,13 +16,13 @@ $(document).ready(function(){
 		if (scrollPercent > 99) {
 			$('.site-nav')[0].classList.add('fixed');
 			// $('.text-container').css("margin-top", (titleOffset - (11 * vh)) );
-			$('.section-two-container')[0].classList.add('scrolled');
-			$('.text-container')[0].classList.remove('fixed');
+			// $('.section-two-container')[0].classList.add('scrolled');
+			// $('.text-container')[0].classList.remove('fixed');
 		}else {
 			$('.site-nav')[0].classList.remove('fixed');
-			$('.section-two-container')[0].classList.remove('scrolled');
-			$('.text-container')[0].classList.add('fixed');
-			$('.text-container').css("margin-top", 'auto' );
+			// $('.section-two-container')[0].classList.remove('scrolled');
+			// $('.text-container')[0].classList.add('fixed');
+			// $('.text-container').css("margin-top", 'auto' );
 
 		}
 	});

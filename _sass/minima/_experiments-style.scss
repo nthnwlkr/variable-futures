@@ -285,7 +285,7 @@ body.e2 {
 	animation: textGrow 5s infinite;
 }
 .text-4 {
-	font-family: 'Fit Variable';
+	font-family: $fit, $fit-fallback;
 	font-size: inherit;
 	font-variation-settings: 'wdth' 100;
 	font-weight: 400;
@@ -608,7 +608,7 @@ body.e2 {
 	position: relative;
 }
 .text-container-7 .text-box, .top-box, .bottom-box {
-	font-family: 'Fit Variable';
+	font-family: $fit, $fit-fallback;
 	color: white;
 	transition: width 300ms ease, height 300ms ease;
 	overflow: hidden;
