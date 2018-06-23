@@ -119,7 +119,7 @@ body.e8 .previous {
 		left: 0;
 	}
 	50% {
-		left: calc(100vw - ((var(--loadingTextBoxWidth))*1px));
+		left: calc(100vw - ((var(--loadingTextBoxWidth))*1.2px));
 	}
 	100%{
 		left: 0;
@@ -384,6 +384,7 @@ body.e2 {
 	animation: catMove 5500ms infinite;
 	animation-direction: alternate;
 	color: $red;
+	font-size: 10vw;
 }
 .text-5 span {
 	display: inline-block;
@@ -838,7 +839,7 @@ body.e2 {
 .text-8 {
 	font-family: $fit, $fit-fallback;
 	font-weight: 400;
-	font-size: 300px;
+	font-size: 20vw;
 	font-variation-settings: 'wdth' 10;
 }
 .text-8 span {
