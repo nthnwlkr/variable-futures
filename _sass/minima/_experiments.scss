@@ -3,7 +3,7 @@ body.experiments-page {
 }
 .page-title {
 	font-size: 2vw;
-	font-family: $serif;
+	font-family: $league;
 	word-break: break-word;
 	// text-transform: uppercase;
 	text-align: left;
@@ -21,23 +21,25 @@ body.experiments-page {
 	margin-bottom: 2vw;
 }
 .page-description {
-	margin-left: 5.3vw;
-	margin-top: 6vw;
-	font-size: 8vw;
-	font-family: $serif;
+	margin-left: 5vw;
+	margin-top: 20vw;
+	font-size: 7vw;
+	font-family: $league;
 	opacity: 0.1;
+	letter-spacing: -5px;
 }
 body.tool-page .page-description {
 	color: $dark-grey;
 }
 .experiment-link, .tool-link {
-	font-size: 8vw;
+	font-size: 7vw;
 	font-family: $sans-font-family;
 	font-variation-settings: 'wdth' 100, 'wght' 500;
 	text-decoration: none;
 	color: $white;
 	// position: relative;
 	transition: font-variation-settings 100ms ease; 
+	position: relative;
 	&:before {
 		content: '';
 		mix-blend-mode: difference;
@@ -53,6 +55,17 @@ body.tool-page .page-description {
 		background-repeat: no-repeat;
 		background-position: center;
 	}
+	&:after {
+		content: '';
+		width: 35px;
+		height: 35px;
+		position: absolute;
+		right: -50px;
+		top: 40px;
+		background-size: cover;
+		background-image: url('/assets/images/link-arrow.svg');
+		mix-blend-mode: difference;
+	}
 	&:hover:before {
 		display: block;
 	}
@@ -60,6 +73,9 @@ body.tool-page .page-description {
 		color: $brand-color;
 		font-variation-settings: 'wdth' 120, 'wght' 600;
 	}
+}
+.experiment-link:after {
+	background-image: url('/assets/images/link-arrow-white.svg');
 }
 .tool-link {
 	color: $dark-grey;

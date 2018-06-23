@@ -1,10 +1,55 @@
 body.tools-home {
 	background: $white !important;
 }
+.title-container {
+	font-family: $sans-font-family;
+	position: fixed;
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 150, 'wght' 500;
+	font-size: 6.5vw;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	color: $dark-grey;
+	mix-blend-mode: difference;
+	z-index: 50;
+	user-select: none;
+	pointer-events: none;
+	opacity: 0.95;
+	h1 {
+		position: absolute;
+		line-height: 1;
+		mix-blend-mode: difference;
+	}
+	.box-1 {
+		left: -1.5vw;;
+		top: 5vh;
+	}
+	.box-2 {
+		right: -1.5vw;
+		top: 15vh;
+	}
+	.box-3 {
+		right: 10vw;
+		bottom: 20vh;
+	}
+}
+.experiments-page .title-container {
+	color: $white;
+
+}
 .tool-info-container {
-	width: 90vw;
+	width: 100vw;
 	margin: 6vw auto;
 	position: relative;
+	y-overflow: hidden;
+	clip: rect(0, auto, auto, 0);
+	clip-path: inset(0 0 0 0);
+	background: $white;
+	z-index: 100;
 	.img-block {
 		width: 60%;
 	}
@@ -15,12 +60,12 @@ body.tools-home {
 		margin-top: 20vw;
 	}
 	&:before {
-		content: 'In the crosshairs';
+		// content: 'In the crosshairs';
 		color: $brand-color;
 		mix-blend-mode: difference;
-		font-family: $serif;
+		font-family: $league;
 		position: absolute;
-		left: -6.3vw;
+		left: -1.3vw;
 		line-height: 1;
 		top: -5vw;
 		font-size: 8vw;
@@ -29,19 +74,29 @@ body.tools-home {
 		transform-origin: bottom left;
 	}
 	&:last-of-type:before {
-		content: 'A(bounding) Boxes'
+		// content: 'A(bounding) Boxes'
 	}
+}
+.tool-wrapper {
+	width: 90vw;
+	margin: 0 auto;
 }
 .tool-button {
 	font-family: $league;
-	width: 35vw;
-	padding: 3vw;
 	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
 	margin: 3vw auto;
 	text-align: center;
 	background: $brand-color;
 	color: $white;
-	font-size: 2vw;
+	font-size: 1vw;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 	&:hover {
 		background: $red;
 		color: $brand-color;
@@ -75,6 +130,13 @@ body.tools-home {
 	height: auto;
 	mix-blend-mode: difference;
 	z-index: 300;
+}
+.tool-link.anchored {
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 @for $e from 0 to 2 {
 	.tool-item:nth-of-type(#{$e + 1}) .tool-link:before {

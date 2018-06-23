@@ -26,7 +26,12 @@ code_types:
 body_classes: tool-page
 
 ---
+<div class="title-container">
+	<h1 class="box-1">too</h1>
+	<h1 class="box-2">ls</h1>
+</div>
 <div class="tools-list-container">
+	<h1 class="small-title">Try them out:</h1>
 	<ul class="tools-list">
 		{% for item in page.tools_list %}
 		<li class="tool-item"><a href="/tool-{{forloop.index}}" class="tool-link">{{item}}</a></li>
@@ -43,7 +48,7 @@ body_classes: tool-page
 			</div>
 		</div>
 		{% endfor %}
-		<a href="/tool-1" class="tool-button">Try the tool</a>
+		<a href="/tool-1" class="tool-link anchored">Try the tool</a>
 	</div>
 </div>
 
