@@ -45,7 +45,7 @@ body {
 	margin: 0 auto;
 	top: 50px;
 	z-index: 200;
-	animation: mouseHide 300ms linear forwards 4000ms;
+	animation: mouseHide 300ms linear forwards 5000ms;
 }
 @keyframes mouseHide {
 	0% {
@@ -65,7 +65,7 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: 2;
-	animation: arrowMove 1000ms ease-in-out 4 alternate; 
+	animation: arrowMove 1000ms ease-in-out 5 forwards alternate; 
 }
 @keyframes arrowMove {
 	0% {
@@ -91,16 +91,16 @@ body {
 	left: 0;
 	right: 0;
 	margin: auto;
-	opacity: 0.4;
 	width: 50px;
 	height: 50px;
 	z-index: 25;
 	font-size: 3vw;
-	color: $white;
+	color: #4f4f4f;
 	text-decoration: none;
 	transform: rotate(90deg);
 	font-variation-settings: 'T1  ' 0;
 	// animation: arrowAnimation 1000ms infinite;
+	animation: mouseHide 300ms linear forwards 5000ms;
 	mix-blend-mode: difference;
 }
 .hover-columns-container {
