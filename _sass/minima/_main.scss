@@ -1,6 +1,11 @@
 
 body {
 	width: 100vw;
+	font-family: $league;
+}
+.text-wrapper {
+	width: 50%;
+	margin: 0 auto;
 }
 @keyframes arrowAnimation {
 	0% {
@@ -183,6 +188,7 @@ body {
 	height: 100%;
 	top: 0;	
 	left: 0;
+	z-index: 1500;
 }
 .section-two-container.scrolled {
 	position: absolute !important;
@@ -225,4 +231,39 @@ body {
 }
 .fixed {
 	position: fixed !important;
+}
+.intro-section {
+	height: 100vh;
+	max-height: 100vh;
+	// background: $dark-grey;
+	color: $white;
+	position: relative;
+	z-index: 2000;
+	a {
+		color: inherit;
+		// font-variation-settings: 'wght' 600;
+		text-decoration: underline;
+	}
+	// color: $dark-grey;
+}
+.intro-text-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 150px;
+}
+.introduction-title {
+	text-transform: uppercase;
+	font-family: $sans-font-family;
+	font-variation-settings: 'wdth' 500, 'wght' 600;
+	position: absolute;
+	width: 48vw;
+	font-size: 1.8vw;
+	transform: rotate(-90deg);
+	transform-origin: top left;
+	bottom: 0;
+	left: 0;
+}
+.introduction-text {
+	width: 40%;
 }

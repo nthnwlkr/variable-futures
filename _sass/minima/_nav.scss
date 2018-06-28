@@ -7,10 +7,11 @@ body.experiments-page {
 	margin: -8px 0 0 -4px;
 	position: fixed;
 	top: 0;
-	z-index: 215;
+	z-index: 2015;
 	width: calc(100vw + 7px);
 }
 body.home-page {
+
 	.site-nav {
 		position: relative;
 	}
@@ -22,6 +23,9 @@ body.home-page {
 	display: flex;
 	justify-content: space-between;
 	list-style-type: none;
+}
+.site-nav.white .nav-link {
+	color: $white;
 }
 .nav-link {
 	text-transform: uppercase;

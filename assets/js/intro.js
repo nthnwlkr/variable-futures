@@ -25,6 +25,11 @@ $(document).ready(function(){
 			// $('.text-container').css("margin-top", 'auto' );
 
 		}
+		if (scrollPercent > 196) {
+			$('.site-nav')[0].classList.add('white');
+		}else {
+			$('.site-nav')[0].classList.remove('white');
+		}
 	});
 
 
