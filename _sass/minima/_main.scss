@@ -49,7 +49,7 @@ body {
 	right: 0;
 	margin: 0 auto;
 	top: 50px;
-	z-index: 200;
+	z-index: 2250;
 	animation: mouseHide 300ms linear forwards 5000ms;
 }
 @keyframes mouseHide {
@@ -113,7 +113,7 @@ body {
 	height: 100vh;
 	display: flex;
 	position: absolute;
-	z-index: 10;
+	z-index: 3000;
 }
 .hover-column {
 	width: calc(100% / 16);
@@ -238,7 +238,7 @@ body {
 	// background: $dark-grey;
 	color: $white;
 	position: relative;
-	z-index: 2000;
+	z-index: 220;
 	a {
 		color: inherit;
 		// font-variation-settings: 'wght' 600;
