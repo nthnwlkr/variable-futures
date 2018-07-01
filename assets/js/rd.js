@@ -1,8 +1,54 @@
 $(document).ready(function(){
-  $('.scroll-box').click(function(e){
-  	$(this).on("mousemove", function(event){
-	    $('.scroll-box').css({left: ((event.pageX) * -1)});
-	});
-  });
+$(".interpolation-title").lettering();
+
+dragElement(document.getElementById("scroll-box"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    document.getElementById("interpolation-scroll-container").onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos3 = e.clientX;
+    // set the element's new position:
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+var benefitsTitles = $('.benefit-link');
+var benefitsTexts = $('.benefit-description');
+benefitsTitles[0].classList.add("active");
+benefitsTexts[0].classList.add("active");
+$('.benefit-link').on("click", function(e){
+	for (i=0;i<benefitsTitles.length;i++){
+		benefitsTitles[i].classList.remove("active");
+		benefitsTexts[i].classList.remove("active");
+	}
+	var thisIndex = ($('h1').index($(e.target)));
+	$(e.target).addClass("active");
+	benefitsTexts[(thisIndex - 1)].classList.add("active");
+});
+
+
 
 });

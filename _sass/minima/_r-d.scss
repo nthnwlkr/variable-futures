@@ -3,11 +3,7 @@ body.rd-page {
 	.site-nav .nav-link {
 		color: $white;
 	}
-	p {
-		float: left;
-		width: 30%;
-	}
-	span {
+	.sections-container span {
 		font-variation-settings: 'wght' 700;
 	}
 }
@@ -132,11 +128,11 @@ $letters: 8;
 .interpolation-scroll-container {
 	width: 100vw;
 	max-width: 100vw;
-	height: 20vh;
-	background: red;
-	overflow: auto;
+	height: 13vw;
+	overflow: hidden;
 	position: relative;
 	margin-top: 200px;
+	cursor: url('/assets/images/pull-arrow.png'), move;
 }
 .scroll-box {
 	width: auto;
@@ -145,9 +141,71 @@ $letters: 8;
 }
 .interpolation-title {
 	text-transform: uppercase;
-	font-size: 8.5vw;
+	font-size: 10.5vw;
 	font-variation-settings: 'wdth' 150;
 	white-space: nowrap;
 	width: auto;
 	user-select: none;
+	span {
+		font-variation-settings: inherit;
+		transition: all 300ms ease;
+		&:hover {
+			font-variation-settings: 'wdth' 150, 'wght' 700;
+		}
+	}
+}
+.benefits-section {
+	width: 100vw;
+	height: 100vh;
+	display: inline-block;
+}
+.benefits-container {
+	width: 80%;
+	margin: 10vw auto 0 auto;
+	display: flex;
+}
+.benefits-list {
+	flex-basis: 100%;
+	margin-right: 20%;
+}
+.benefit-link {
+	text-transform: uppercase;
+	position: relative;
+	font-variation-settings: 'wdth' 140;
+	font-size: 1.4vw;
+	display: inline-block;
+	margin-bottom: 2vw;
+	cursor: pointer;
+	color: rgba($white, 0.3);
+	&:before {
+		content: '';
+		position: absolute;
+		right: -2vw;
+		bottom: 0;
+		font: inherit;
+		color: inherit;
+	}
+	&:hover {
+		color: $white;
+	}
+}
+.benefit-link.active {
+	color: $white;
+	&:before {
+		content: '+'
+	}
+}
+.benefits-text-container {
+	position: relative;
+	flex-basis: 130%;
+}
+.benefit-description {
+	top: 75px;
+	position: absolute;
+	display: none;
+	line-height: 1.5;
+	font-size: 1.2vw;
+}
+.benefit-description.active {
+	display: block;
 }

@@ -41,10 +41,35 @@ layout: default
 	</div>
 </div>
 <div id="live-interpolation" class="live-interpolation-section">
-	<div class="interpolation-scroll-container">
-		<div class="scroll-box">
+	<div class="interpolation-scroll-container" id="interpolation-scroll-container">
+		<div class="scroll-box" id="scroll-box">
 			<h1 class="interpolation-title">Live web interpolation</h1>
 		</div>
 	</div>
 </div>
+<div class="benefits-section" id="key-benefits">
+	<div class="benefits-container">
+		<div class="benefits-list">
+			{% for benefits_list in page.benefits %}
+			{% for benefit in benefits_list %}
+			<h1 class="benefit-link">{{benefit[0]}}</h1>
+			{% endfor %}
+			{% endfor %}
+		</div>
+		<div class="benefits-text-container">
+			{% for benefits_list in page.benefits %}
+			{% for benefit in benefits_list %}
+			<p class="benefit-description">{{benefit[1]}}</p>
+			{% endfor %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
 <script src="/assets/js/rd.js"></script>
