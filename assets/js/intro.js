@@ -15,10 +15,11 @@ $(document).ready(function(){
 		scrollPercent = parseInt(scrollDistance/(winheight)*100);
 		if (scrollPercent > 99) {
 			$('.site-nav')[0].classList.add('fixed');
+			// $('.final-letter')[0].classList.remove('show');
 			// $('.text-container').css("margin-top", (titleOffset - (11 * vh)) );
 			// $('.section-two-container')[0].classList.add('scrolled');
 			// $('.text-container')[0].classList.remove('fixed');
-		}else {
+		} else {
 			$('.site-nav')[0].classList.remove('fixed');
 			// $('.section-two-container')[0].classList.remove('scrolled');
 			// $('.text-container')[0].classList.add('fixed');
@@ -32,7 +33,7 @@ $(document).ready(function(){
 		}
 	});
 
-
+	
 	hoverColumn.on('mouseenter', function(e){			
 		var index = hoverColumn.index(this)
 			selectedColumn = (e.target),

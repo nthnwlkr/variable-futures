@@ -124,6 +124,8 @@ body {
 	background: $dark-grey;
 	position: relative;
 	z-index: 5;
+	clip: rect(0, auto, auto, 0);
+	clip-path: inset(0 0 0 0);
 }
 .intro-letters-container {
 	width: 100%;
@@ -234,36 +236,58 @@ body {
 }
 .intro-section {
 	height: 100vh;
+	width: 100%;
 	max-height: 100vh;
 	// background: $dark-grey;
 	color: $white;
 	position: relative;
-	z-index: 220;
+	z-index: 3220;
 	a {
 		color: inherit;
 		// font-variation-settings: 'wght' 600;
 		text-decoration: underline;
 	}
+	display: inline-block;
 	// color: $dark-grey;
 }
 .intro-text-wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	padding-top: 150px;
+	margin-top: 30vh;
 }
 .introduction-title {
 	text-transform: uppercase;
 	font-family: $sans-font-family;
 	font-variation-settings: 'wdth' 500, 'wght' 600;
 	position: absolute;
-	width: 48vw;
-	font-size: 1.8vw;
-	transform: rotate(-90deg);
+	width: 45vw;
+	font-size: 2vw;
+	// transform: rotate(-90deg);
 	transform-origin: top left;
-	bottom: 0;
+	top: 20vh;
 	left: 0;
+	span {
+		color: rgba($white, 0.2);
+		text-transform: none;
+		font-variation-settings: 'wdth' 600, 'wght' 450;
+	}
 }
 .introduction-text {
 	width: 40%;
+	line-height: 1.7;
+	color: rgba($white, 0.5);
+	margin-right: 5vw;
+	font-variation-settings: 'wght' 300;
+	span {
+		font-variation-settings: 'wght' 500;
+		color: $red;
+	}
+	a {
+		color: $white;
+	}
+	p:not(:first-of-type) {
+		// margin-bottom: 10px;
+		text-indent: 40px;
+	}
 }

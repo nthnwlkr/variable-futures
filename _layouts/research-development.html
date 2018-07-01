@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{%- include header.html -%}
+<div class="heading-section">
+	<div class="sections-container">
+			{% for section_list in page.sections %}
+				{% for section in section_list %}
+					<a href="#{{ section[0] }}" class="section-link">{{section[1]}}</a><div class="space-height"></div>
+				{% endfor %}
+			{% endfor %}
+		Variable fonts are a significant milestone in the long history of type design. They give a substantial amount of control back to the individual designer and allow changes to minor typeface components such as x-height, and descender & ascender height.<br><br><span>Design Space No.1 – R & D</span> investigates the history of variable fonts and the stages undertaken to bring the concept to its current place.<br><br>This design space incorporates conceptual information, as well as detailed explanations of the traditional typographic interpolation model. This concept builds the backbone for how variable fonts are interpolated in real time on the web today.
+	</div>
+	<div class="r-d-title"></div>
+</div>
+<div id="traditional-interpolation" class="traditional-interpolation-section">
+	
+</div>
+<div class="vf-section">
+	<div class="vf-container">
+		<div class="v-container">
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+			<a class="v-letter outline-letter outlined" href="">V</a>
+		</div>
+		<div class="f-container">
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+			<a class="f-letter outline-letter outlined" href="">F</a>
+		</div>
+	</div>
+</div>
+<div id="live-interpolation" class="live-interpolation-section">
+	<div class="interpolation-scroll-container">
+		<div class="scroll-box">
+			<h1 class="interpolation-title">Live web interpolation</h1>
+		</div>
+	</div>
+</div>
+<script src="/assets/js/rd.js"></script>

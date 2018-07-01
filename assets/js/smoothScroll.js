@@ -1,4 +1,4 @@
-$(document).on("click", "a[href^='/#']", function() {
+$(document).on("click", "a[href^='#']", function() {
         var e = this
           , t = $("html, body")
           , n = this.href.match(/#([^/#]*)$/)[1];
