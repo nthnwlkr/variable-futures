@@ -120,7 +120,7 @@ $letters: 8;
 	.v-letter:nth-of-type(#{$i + 1}), .f-letter:nth-of-type(#{$i + 1})  {
     	font-variation-settings: 'wdth' 100, 'wght' #{($i * 100)};
     	z-index: #{(9 - $i)};
-    	// animation: letterFade 1000ms #{(200 * $i - 200)}ms infinite forwards alternate;
+    	animation: letterFade 1000ms #{(200 * $i - 200)}ms infinite forwards alternate;
 	}
 }
 .f-letter {
