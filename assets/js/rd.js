@@ -25,7 +25,8 @@ function dragElement(elmnt) {
     pos1 = pos3 - e.clientX;
     pos3 = e.clientX;
     // set the element's new position:
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    // elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.setAttribute("style", " font-variation-settings: \'wght\' " + (pos3 * 0.5) + "; left:" + (elmnt.offsetLeft - pos1) +  "px ");
   }
 
   function closeDragElement() {
@@ -39,14 +40,14 @@ var benefitsTitles = $('.benefit-link');
 var benefitsTexts = $('.benefit-description');
 benefitsTitles[0].classList.add("active");
 benefitsTexts[0].classList.add("active");
-$('.benefit-link').on("click", function(e){
+$('.benefit-link').on("mouseover", function(e){
 	for (i=0;i<benefitsTitles.length;i++){
 		benefitsTitles[i].classList.remove("active");
 		benefitsTexts[i].classList.remove("active");
 	}
 	var thisIndex = ($('h1').index($(e.target)));
 	$(e.target).addClass("active");
-	benefitsTexts[(thisIndex - 1)].classList.add("active");
+	benefitsTexts[(thisIndex - 2)].classList.add("active");
 });
 
 

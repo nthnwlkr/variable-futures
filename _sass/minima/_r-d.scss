@@ -66,6 +66,23 @@ body.rd-page {
 	background-position: bottom center;
 	background-repeat: no-repeat;
 }
+.traditional-interpolation-section {
+	display: inline-block;
+}
+.traditional-interpolation-title {
+	font-family: $sans-font-family;
+	font-size: 6vw;
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 150, 'wght' 600;
+	margin-top: 9vw;
+
+}
+.traditional-interpolation-description {
+	width: 30%;
+	margin: 3vw 0 0 6vw;
+	line-height: 1.5;
+	word-break: break-word;
+}
 .vf-section	{
 	width: 100vw;
 	height: 100vh;
@@ -73,7 +90,8 @@ body.rd-page {
 	position: relative;
 }
 .vf-container {
-	width: 100%;
+	width: 80%;
+	margin: 0 auto;
 	height: 100%;
 	position: absolute;
 	display: flex;
@@ -92,7 +110,7 @@ body.rd-page {
 	text-align: center;
 	position: absolute;
 	margin: auto;
-	font-size: 45vw;
+	font-size: 47vw;
 	font-variation-settings: 'wdth' 100, 'wght' 300;
 	left: 0;
 	right: 0;
@@ -102,6 +120,7 @@ body.rd-page {
 	-webkit-text-stroke: 1px $red;
 	color: rgba($red, 0);
 	cursor: auto;
+	pointer-events: none;
 }
 @keyframes letterFade {
 	0% {
@@ -125,10 +144,18 @@ $letters: 8;
 .live-interpolation-section {
 	height: 100vh;
 }
+.live-description {
+	float: right;
+	width: 30%;
+	color: $red;
+	line-height: 1.5;
+	margin-top: 5vw;
+	margin-right: 7vw;
+}
 .interpolation-scroll-container {
 	width: 100vw;
 	max-width: 100vw;
-	height: 13vw;
+	height: 21vw;
 	overflow: hidden;
 	position: relative;
 	margin-top: 200px;
@@ -138,49 +165,59 @@ $letters: 8;
 	width: auto;
 	position: absolute;
 	left: 0;
+	font-variation-settings: 'wdth' 150, 'wght' 800;
 }
 .interpolation-title {
 	text-transform: uppercase;
-	font-size: 10.5vw;
-	font-variation-settings: 'wdth' 150;
+	font-variation-settings: inherit;
+	font-size: 18.5vw;
 	white-space: nowrap;
 	width: auto;
 	user-select: none;
 	span {
 		font-variation-settings: inherit;
 		transition: all 300ms ease;
-		&:hover {
-			font-variation-settings: 'wdth' 150, 'wght' 700;
-		}
 	}
 }
 .benefits-section {
 	width: 100vw;
 	height: 100vh;
 	display: inline-block;
+	background: $white;
+	// background: $brand-color;
 }
 .benefits-container {
-	width: 80%;
-	margin: 10vw auto 0 auto;
+	width: 70%;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 .benefits-list {
-	flex-basis: 100%;
+	flex-basis: 120%;
 	margin-right: 20%;
 }
-.benefit-link {
+.benefit-link, .benefit-title {
 	text-transform: uppercase;
 	position: relative;
-	font-variation-settings: 'wdth' 140;
+	font-variation-settings: 'wdth' 140, 'wght' 500;
 	font-size: 1.4vw;
+	font-family: $sans-font-family;
 	display: inline-block;
-	margin-bottom: 2vw;
-	cursor: pointer;
-	color: rgba($white, 0.3);
+	clear: both;
+	padding-bottom: 1.8vw;
+	color: rgba($black, 0.35);
+	cursor: default;
+}
+.benefit-link {
 	&:before {
 		content: '';
 		position: absolute;
-		right: -2vw;
+		right: -1.7vw;
+		top: 0;
 		bottom: 0;
 		font: inherit;
 		color: inherit;
@@ -189,22 +226,40 @@ $letters: 8;
 		color: $white;
 	}
 }
+.benefit-title {
+	color: $red;
+	// font-variation-settings: 'wdth' 140, 'wght' 600;
+	text-align: right;
+	margin-right: calc(3vw + 20px);
+	transform: rotate(-90deg);
+	transform-origin: top left;
+	top: 7.7vw;
+	left: -5vw;
+	display: inline-block;
+	position: absolute;
+	&:before {
+		content: '';
+	}
+}
 .benefit-link.active {
-	color: $white;
+	color: $black;
 	&:before {
 		content: '+'
 	}
 }
 .benefits-text-container {
 	position: relative;
-	flex-basis: 130%;
+	width: 180%;
+	// flex-basis: 160%;
 }
 .benefit-description {
-	top: 75px;
+	// top: 75px;
 	position: absolute;
 	display: none;
 	line-height: 1.5;
 	font-size: 1.2vw;
+	// font-variation-settings: 'wght' 300;
+	color: $black;
 }
 .benefit-description.active {
 	display: block;

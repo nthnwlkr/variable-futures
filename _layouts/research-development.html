@@ -13,8 +13,13 @@ layout: default
 	</div>
 	<div class="r-d-title"></div>
 </div>
+<div class="web-typography-section" id="web-typography"></div>
 <div id="traditional-interpolation" class="traditional-interpolation-section">
-	
+	<h1 class="traditional-interpolation-title">Traditional<br>interpolation</h1>
+	<p class="traditional-interpolation-description">
+		Type designers use the process of traditional font interpolation as a means to produce new, intermediary fonts from a given set of master fonts. Master fonts are representative of the fundamental design of different points within individual font families, which ultimately characterise any given family. Maths is utilised to identify the ratios of space between these points, allowing for type designers to use interpolation to derive a limited continuum of font variants. This concept can then be further extended to webfonts, servicing the desire for interpolating font variants to be accessible to web users.<br><br>
+		For example, the ‘VARIABLE FUTURES’ glyph set demonstrates the possibilities of interpolation by the use of light and heavy master fonts. While only five variations are depicted in this example, the interpolation ‘limited continuum’ essentially allows for any number of poles and axes, coupled with combinations of properties. In this case, interpolation occurs for everything at once between only two poles.
+	</p>
 </div>
 <div class="vf-section">
 	<div class="vf-container">
@@ -46,13 +51,18 @@ layout: default
 			<h1 class="interpolation-title">Live web interpolation</h1>
 		</div>
 	</div>
+	<p class="live-description">
+		Instead of fonts being exported as separate file sources, live web interpolation involves the interpolation of fonts ‘on the fly’ inside the browser. This enables fonts themselves to respond to the contexts that constrain them. Since type reflows under such circumstances, and is at least somewhat independent of a responsive design layout, the setting of abrupt points of change is less necessary. Type can be adapted to the design by the use of bending points, rather than just breaking points, which means that type is not constrained to adhering to specific font weights/designs.
+	</p>
 </div>
+
 <div class="benefits-section" id="key-benefits">
 	<div class="benefits-container">
+		<h1 class="benefit-title">Key<br>benefits</h1>
 		<div class="benefits-list">
 			{% for benefits_list in page.benefits %}
 			{% for benefit in benefits_list %}
-			<h1 class="benefit-link">{{benefit[0]}}</h1>
+			<h1 class="benefit-link">{{benefit[0]}}</h1><br>
 			{% endfor %}
 			{% endfor %}
 		</div>
