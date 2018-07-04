@@ -46,8 +46,8 @@ body.tools-home {
 	margin: 6vw auto;
 	position: relative;
 	y-overflow: hidden;
-	clip: rect(0, auto, auto, 0);
-	clip-path: inset(0 0 0 0);
+	// clip: rect(0, auto, auto, 0);
+	// clip-path: inset(0 0 0 0);
 	background: $white;
 	z-index: 100;
 	.img-block {
@@ -121,13 +121,17 @@ body.tools-home {
 	}
 }
 .tool-link:before {
-	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
-	background-size: cover;
-	width: auto;
-	height: auto;
+	// right: 0;
+	top: 50px;
+	// bottom: 0;
+	background-size: contain;
+	// width: auto;
+	// height: auto;
+	content: '';
+	width: 40vw;
+	// height: 40vh;
+	position: fixed;
 	mix-blend-mode: difference;
 	z-index: 300;
 }

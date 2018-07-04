@@ -48,7 +48,7 @@ body_classes: tool-page
 			</div>
 		</div>
 		{% endfor %}
-		<a href="/tool-1" class="tool-link anchored">Try the tool</a>
+		<!-- <a href="/tool-1" class="tool-link anchored">Try the tool</a> -->
 	</div>
 </div>
 
@@ -61,6 +61,6 @@ body_classes: tool-page
 		</div>
 	</div>
 	{% endfor %}
-	<a href="/tool-2" class="tool-button">Try the tool</a>
+	<!-- <a href="/tool-2" class="tool-button">Try the tool</a> -->
 </div>
 

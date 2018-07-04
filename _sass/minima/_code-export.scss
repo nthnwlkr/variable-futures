@@ -4,10 +4,15 @@
 	margin: ($spacing-unit * 2) ($spacing-unit * 2) 0px 0px;
 }
 .code-to-copy {
+	font-family: $league;
 	height: 0;
 	margin-top: $spacing-unit * 2;
 	overflow: hidden;
 	transition: height 350ms ease;
+	& pre {
+		font-family: inherit;
+		font-size: 12px;
+	}
 }
 .code-to-copy.is-open {
 	height: 200px;

@@ -26,7 +26,7 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     // set the element's new position:
     // elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    elmnt.setAttribute("style", " font-variation-settings: \'wght\' " + (pos3 * 0.5) + "; left:" + (elmnt.offsetLeft - pos1) +  "px ");
+    elmnt.setAttribute("style", " font-variation-settings: \'wght\' " + (pos3 * 0.6) + "; left:" + (elmnt.offsetLeft - pos1) +  "px ");
   }
 
   function closeDragElement() {

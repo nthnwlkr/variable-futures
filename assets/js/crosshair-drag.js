@@ -152,9 +152,9 @@ function dragElement(elmnt) {
     // console.log(xAxisValue);
     // console.log(yAxisValue);
     var style_string = xCssPrefixToAdd + ' ' + xAxisValue + ', ' + yCssPrefixToAdd + ' ' + yAxisValue;
-    textInputBox.setAttribute('style', 'font-variation-settings:' + style_string);
+    textInputBox.setAttribute('style', 'font-variation-settings: ' + style_string);
     for (i=0;i<syntaxVariationTarget.length;i++) {
-        syntaxVariationTarget[i].innerHTML = style_string;
+        syntaxVariationTarget[i].innerHTML = ' ' + style_string;
     }
 
     // console.log(wghtAxisValue);
