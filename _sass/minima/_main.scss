@@ -89,6 +89,21 @@ body {
 	z-index: 1;
 	opacity: 0.2;
 }
+.scroll-label {
+	position: absolute;
+	bottom: 45px;
+	left: 0;
+	right: 0;
+	font-size: 1.4vw;
+	font-variation-settings: 'wght' 200;
+	color: $white;
+	font-family: $league;
+	text-align: center;
+	margin: auto;
+	z-index: 30;
+	display: none;
+	opacity: 0.5;
+}
 .scroll-arrow {
 	position: absolute; 
 	font-family: $zycon;
@@ -242,6 +257,7 @@ body {
 	color: $white;
 	position: relative;
 	z-index: 3220;
+	pointer-events: none;
 	a {
 		color: inherit;
 		// font-variation-settings: 'wght' 600;
@@ -249,42 +265,43 @@ body {
 	}
 	display: inline-block;
 	// color: $dark-grey;
+	& > * {
+		pointer-events: auto;
+	}
 }
 .intro-text-wrapper {
-	width: 100%;
+	width: 90%;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30vh;
+	margin: 30vh auto 0 auto;
 }
 .introduction-title {
-	text-transform: uppercase;
-	font-family: $sans-font-family;
-	font-variation-settings: 'wdth' 500, 'wght' 600;
-	position: absolute;
-	width: 45vw;
+	font-variation-settings: 'wdth' 450, 'wght' 450;
+	// position: absolute;
+	width: 33vw;
 	font-size: 2vw;
 	// transform: rotate(-90deg);
 	transform-origin: top left;
 	top: 20vh;
+	color: rgba($white, 0.2);
 	left: 0;
+	font-family: $sans-font-family;
 	span {
-		color: rgba($white, 0.2);
-		text-transform: none;
+		color: $white;
 		font-variation-settings: 'wdth' 600, 'wght' 450;
+		text-transform: uppercase;
 	}
 }
 .introduction-text {
 	width: 40%;
 	line-height: 1.7;
-	color: rgba($white, 0.5);
-	margin-right: 5vw;
-	font-variation-settings: 'wght' 300;
+	color: $white;
+	// margin-right: 5vw;
+	font-variation-settings: 'wght' 250;
 	span {
-		font-variation-settings: 'wght' 500;
-		color: $red;
+		font-variation-settings: 'wght' 700;
 	}
 	a {
-		color: $white;
 	}
 	p:not(:first-of-type) {
 		// margin-bottom: 10px;

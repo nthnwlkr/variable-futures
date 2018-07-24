@@ -7,7 +7,6 @@ body.experiments-page {
 	margin: -8px 0 0 -4px;
 	position: fixed;
 	top: 0;
-	z-index: 4015;
 	width: calc(100vw + 7px);
 }
 body.home-page {
@@ -20,6 +19,8 @@ body.home-page {
 	top: 0;
 }
 .navigation-list {
+	z-index: 4015;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	list-style-type: none;

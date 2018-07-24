@@ -32,7 +32,12 @@ $(document).ready(function(){
 			$('.site-nav')[0].classList.remove('white');
 		}
 	});
-
+	$('.final-column').on('mouseenter', function(){
+		$('.scroll-label').addClass('show');
+	});
+	$('.final-column').on('mouseout', function(e){
+		$('.scroll-label').removeClass('show');
+	});
 	
 	hoverColumn.on('mouseenter', function(e){			
 		var index = hoverColumn.index(this)
