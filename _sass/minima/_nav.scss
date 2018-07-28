@@ -28,6 +28,15 @@ body.home-page {
 .site-nav.white .nav-link {
 	color: $white;
 }
+.nav-item {
+	position: relative; 
+
+	&.active,
+	&:hover {
+		top: -2px;
+		transform: scale(1, -1);
+	}
+}
 .nav-link {
 	text-transform: uppercase;
 	text-decoration: none;
@@ -38,14 +47,13 @@ body.home-page {
 	transition: font-variation-settings 200ms ease;
 	// margin-right: 70px;
 	&:hover {
-		font-variation-settings: 'wght' 700, 'wdth' 700;
 	}
 }
 .nav-link.active {
 	font-variation-settings: 'wght' 700, 'wdth' 700;
 	position: relative;
 	&:before {
-		// content: '';
+		content: '';
 		width: 100%;
 		height: 3px; 
 		background: $dark-grey;

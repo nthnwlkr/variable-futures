@@ -278,3 +278,27 @@ $letters: 8;
 .benefit-description.active {
 	display: block;
 }
+
+.web-typography-section {
+	display: flex;
+	overflow: hidden;
+	max-width: 100vw;
+}
+.web-typography-title {
+	font-size: 5.5vw;
+	text-transform: uppercase;
+	font-family: $sans-font-family;
+	font-variation-settings: 'wdth' 115, 'wght' 700;
+	min-width: 60vw;
+	transition: font-variation-settings 200ms ease, min-width 200ms ease;
+	&:hover {
+		font-variation-settings: 'wdth' 125, 'wght' 700;
+		min-width: 63vw;
+		& ~ .web-typography-text {
+			min-width: 17vw;
+		}
+	}
+}
+.web-typography-text {
+	min-width: 20vw;
+}

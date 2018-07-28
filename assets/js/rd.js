@@ -45,9 +45,10 @@ $('.benefit-link').on("mouseover", function(e){
 		benefitsTitles[i].classList.remove("active");
 		benefitsTexts[i].classList.remove("active");
 	}
-	var thisIndex = ($('h1').index($(e.target)));
+	var thisIndex = ($('.benefits-list > h1').index($(e.target)));
+  console.log(thisIndex);
 	$(e.target).addClass("active");
-	benefitsTexts[(thisIndex - 2)].classList.add("active");
+	benefitsTexts[(thisIndex)].classList.add("active");
 });
 
 
