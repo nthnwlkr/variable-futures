@@ -69,17 +69,22 @@ layout: default
       </div>
     </div>
     <div class="publication-section">
+      <div class="pub-gallery images-2">
+        {% assign image_files2 = site.static_files | where: "pub2", true %}
+        {% for image in image_files2 %}
+            <div class="gal-img g-{{forloop.index}}">
+              <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+            </div>
+        {% endfor %}
+        <div class="pub-columns">
+        {% for image in image_files2 %}
+          <div class="pub-column p-col-{{forloop.index}}"></div>
+        {% endfor %}
+        </div>
+      </div>
       <div class="images-section images-1">
         {% assign image_files = site.static_files | where: "pub1", true %}
         {% for image in image_files %}
-              <div class="pub-img pub-{{forloop.index}}">
-                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-              </div>
-        {% endfor %}
-      </div>
-      <div class="images-section images-2">
-        {% assign image_files2 = site.static_files | where: "pub2", true %}
-        {% for image in image_files2 %}
               <div class="pub-img pub-{{forloop.index}}">
                 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
               </div>
@@ -93,3 +98,4 @@ layout: default
 
 
 <script src="assets/js/intro.js"></script>
+<script src="assets/js/publication.js"></script>

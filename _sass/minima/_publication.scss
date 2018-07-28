@@ -1,9 +1,10 @@
 .publication-section {
 	width: 100vw;
-	margin: auto;
+	margin: 10vw auto;
+	display: inline-block;
 }
-.pub-img {
-	margin: 4vw 0;
+.images-1 .pub-img {
+	margin: 7vw 0;
 	padding: 2vw;
 	clear: both;
 	display: block;
@@ -11,21 +12,21 @@
 	$size1: 1,4,7;
 	$size2: 3,6,8;
 	$size3: 2,5,9;
-	$size4: 3,6,9;
+	$size4: 3,6,7,9;
 	
 	@each $i in $size1 {
 		&:nth-of-type(#{$i}) {
-			width: 55%;
+			width: 60%;
 		}
 	} 
 	@each $i in $size2 {
 		&:nth-of-type(#{$i}) {
-			width: 45%;
+			width: 60%;
 		}
 	} 
 	@each $i in $size3 {
 		&:nth-of-type(#{$i}) {
-			width: 70%;
+			width: 75%;
 			margin: 0 auto;
 			padding: 50px;
 		}
@@ -33,11 +34,60 @@
 	@each $i in $size4 {
 		&:nth-of-type(#{$i}) {
 			float: right;
-			margin-right: ($i * 2vw);
+			margin-right: ($i * 1.7vw);
 		}
 	} 
 
 	& img {
 		width: 100%;
 	}
+}
+
+.pub-gallery {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.pub-columns {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+}
+
+
+
+.gal-img {
+	width: 100%;
+	height: 100%;
+	// box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: none;
+
+	& img {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+.gal-img.active {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.pub-column {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	opacity: 0.3;
 }
