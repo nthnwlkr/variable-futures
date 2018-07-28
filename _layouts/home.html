@@ -58,7 +58,7 @@ layout: default
           <span>Variable Futures: A Typographic Exploration</span> aims to integrate variable fonts into the context of the web and related technologies.
         </p>
         <p>
-          Variable Futures is presented in three distinct exploration spaces; firstly, we <a href="/r-d">display our findings</a> from a solely conceptual basis, building on previous work from significant contributors in the field of variable fonts.
+          Variable Futures is presented in three distinct exploration spaces; firstly, we <a href="/research">display our findings</a> from a solely conceptual basis, building on previous work from significant contributors in the field of variable fonts.
         </p>
         <p>
           Secondly, <a href="/experiments">we experiment</a> in two- and three-dimensional capacities, expanding the <span>Variable Futures</span> exploration frontier.
@@ -66,6 +66,24 @@ layout: default
         <p>
           Finally, we bind together all previous findings to produce a series of <a href="/tools" >experimental variable font tools</a> primarily for use on the web.
         </p>
+      </div>
+    </div>
+    <div class="publication-section">
+      <div class="images-section images-1">
+        {% assign image_files = site.static_files | where: "pub1", true %}
+        {% for image in image_files %}
+              <div class="pub-img pub-{{forloop.index}}">
+                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+              </div>
+        {% endfor %}
+      </div>
+      <div class="images-section images-2">
+        {% assign image_files2 = site.static_files | where: "pub2", true %}
+        {% for image in image_files2 %}
+              <div class="pub-img pub-{{forloop.index}}">
+                <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+              </div>
+        {% endfor %}
       </div>
     </div>
   </div>

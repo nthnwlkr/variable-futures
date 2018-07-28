@@ -1,0 +1,43 @@
+.publication-section {
+	width: 100vw;
+	margin: auto;
+}
+.pub-img {
+	margin: 4vw 0;
+	padding: 2vw;
+	clear: both;
+	display: block;
+
+	$size1: 1,4,7;
+	$size2: 3,6,8;
+	$size3: 2,5,9;
+	$size4: 3,6,9;
+	
+	@each $i in $size1 {
+		&:nth-of-type(#{$i}) {
+			width: 55%;
+		}
+	} 
+	@each $i in $size2 {
+		&:nth-of-type(#{$i}) {
+			width: 45%;
+		}
+	} 
+	@each $i in $size3 {
+		&:nth-of-type(#{$i}) {
+			width: 70%;
+			margin: 0 auto;
+			padding: 50px;
+		}
+	} 
+	@each $i in $size4 {
+		&:nth-of-type(#{$i}) {
+			float: right;
+			margin-right: ($i * 2vw);
+		}
+	} 
+
+	& img {
+		width: 100%;
+	}
+}

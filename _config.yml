@@ -28,6 +28,16 @@ theme: minima
 plugins:
   - jekyll-feed
 
+defaults:
+  - scope:
+      path: "assets/images/publication-1"
+    values:
+      pub1: true
+  - scope:
+      path: "assets/images/publication-2"
+    values:
+      pub2: true
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
