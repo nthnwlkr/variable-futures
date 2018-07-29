@@ -297,7 +297,7 @@ $letters: 8;
 		font-variation-settings: 'wdth' 125, 'wght' 700;
 		min-width: 63vw;
 		& ~ .web-typography-text {
-			min-width: 19vw;
+			min-width: 10vw;
 		}
 		& .reflow-container {
 			display: block;
@@ -307,10 +307,6 @@ $letters: 8;
 .web-typography-text {
 	min-width: 20vw;
 	transition: min-width 200ms ease;
-
-	&.small-width {
-		min-width: 17vw;
-	}
 }
 .reflow-container {
 	position: absolute;
