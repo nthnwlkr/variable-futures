@@ -290,15 +290,48 @@ $letters: 8;
 	font-family: $sans-font-family;
 	font-variation-settings: 'wdth' 115, 'wght' 700;
 	min-width: 60vw;
+	max-height: 40vh;
 	transition: font-variation-settings 200ms ease, min-width 200ms ease;
+	position: relative;
 	&:hover {
 		font-variation-settings: 'wdth' 125, 'wght' 700;
 		min-width: 63vw;
 		& ~ .web-typography-text {
-			min-width: 17vw;
+			min-width: 19vw;
+		}
+		& .reflow-container {
+			display: block;
 		}
 	}
 }
 .web-typography-text {
 	min-width: 20vw;
+	transition: min-width 200ms ease;
+
+	&.small-width {
+		min-width: 17vw;
+	}
+}
+.reflow-container {
+	position: absolute;
+	width: 25vw;
+	overflow: hidden;
+	top: 34vh;
+	right: 0;
+	display: none;
+	
+}
+@keyframes reflowAnimation {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: -1000%;
+	}
+}
+.reflow {
+	white-space: nowrap;
+	position: relative;
+	animation: reflowAnimation 7000ms linear infinite;
+	color: $red;
 }

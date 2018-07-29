@@ -109,7 +109,6 @@ body.tools-home {
 }
 .img-caption {
 	margin-top: 2vw;
-	font-family: $serif;
 	font-size: 1.7vw;
 	color: $dark-grey;
 	display: block;
@@ -142,8 +141,4 @@ body.tools-home {
 	left: 0;
 	right: 0;
 }
-@for $e from 0 to 2 {
-	.tool-item:nth-of-type(#{$e + 1}) .tool-link:before {
-	    	background-image: url('/assets/images/tool-images/big-#{$e + 1}.png');
-		}
-}
+

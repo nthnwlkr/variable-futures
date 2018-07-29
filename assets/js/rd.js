@@ -51,6 +51,11 @@ $('.benefit-link').on("mouseover", function(e){
 	benefitsTexts[(thisIndex)].classList.add("active");
 });
 
-
+$('.web-typography-title').mouseover(function(){
+  $('.web-typography-text')[0].classList.add('small-width');
+});
+$('.web-typography-title').mouseout(function(){
+  $('.web-typography-text')[0].classList.remove('small-width');
+});
 
 });
