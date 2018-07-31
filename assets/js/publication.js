@@ -13,16 +13,7 @@ $(document).ready(function(){
 		imgList[thisIndex - 1].classList.add("active");
 	});
 
-	$(document).scroll(function(){
-		pubColumns.mouseenter(function (e){
-		var thisIndex = ($(e.target).index()) + 1;
-		for (i=0;i<imgList.length;i++) {
-			console.log(i);
-			imgList[i].classList.remove("active");
-		}
-		imgList[thisIndex - 1].classList.add("active");
-	});
-	});
+
 
 	function fadeImg(e) {
 		var winHeight = $(window).height();

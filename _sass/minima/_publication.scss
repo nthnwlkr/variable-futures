@@ -47,6 +47,9 @@
 			margin-right: ($i * 1.7vw);
 		}
 	} 
+	&:nth-of-type(2) {
+		margin-left: 7vw;
+	}
 
 	& img {
 		width: 100%;
