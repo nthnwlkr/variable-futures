@@ -159,12 +159,49 @@ $letters: 8;
 .live-interpolation-section {
 	height: 100vh;
 }
-.live-description {
-	float: right;
-	width: 30%;
-	color: $red;
-	line-height: 1.5;
+.live-description-container {
 	margin-top: 5vw;
+	width: 100%;
+	display: flex;
+}
+.interpolation-icons {
+	min-width: 65%;
+	display: flex;
+	align-items: center;
+	padding: 0 4vw;
+	box-sizing: border-box;
+	justify-content: space-around;
+}
+@keyframes ic1Ani {
+	0% {
+		font-variation-settings: 'T1  ' 0; 
+	}
+	100% {
+		font-variation-settings: 'T1  ' 1;
+	}
+}
+@keyframes ic4Ani {
+	0% {
+		font-variation-settings: 'M1  ' -1; 
+	}
+	100% {
+		font-variation-settings: 'M1  ' 1;
+	}
+}
+.ic {
+	font-size: 9vw;
+	font-family: $zycon;
+	color: $red;
+}
+.ic1, .ic2 {
+	animation: ic1Ani 2000ms infinite alternate forwards;
+}
+.ic3, .ic4 {
+	animation: ic4Ani 2000ms infinite alternate forwards;
+}
+.live-description {
+	// color: $red;
+	line-height: 1.5;
 	margin-right: 7vw;
 }
 .interpolation-scroll-container {
@@ -314,7 +351,7 @@ $letters: 8;
 }
 .reflow-container {
 	position: absolute;
-	width: 25vw;
+	width: 35vw;
 	overflow: hidden;
 	top: 34vh;
 	right: 0;
@@ -371,10 +408,4 @@ $letters: 8;
 	font-size: 3.2vw;
 	font-family: $sans-font-family;
 	font-variation-settings: 'wdth' 120, 'wght' 480;
-}
-.ic {
-	font-size: 10vw;
-	font-family: $zycon;
-}
-.ic1 {
 }
