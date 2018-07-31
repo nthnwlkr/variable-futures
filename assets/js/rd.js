@@ -3,6 +3,8 @@ $(document).ready(function(){
 var benefitsHeight = $('.benefits-section').outerHeight(),
     docHeight = $(document).outerHeight(),
     winHeight = $(window).outerHeight(),
+    liveSection = $('.live-interpolation-section'),
+    liveOffset = liveSection.offset().top,
     benefitsScroll = (docHeight - (winHeight));
 
   console.log(docHeight);
@@ -16,6 +18,14 @@ $(window).scroll(function() {
     $('.site-nav')[0].classList.add('black');
   }else {
     $('.site-nav')[0].classList.remove('black');
+  }
+  if (scrollDistance > liveOffset) {
+    liveSection[0].classList.add("animate-true");
+  }else {
+    liveSection[0].classList.remove("animate-true");
+  }
+  if (scrollDistance > (liveOffset + (winHeight * 1.6))){
+    liveSection[0].classList.remove("animate-true");
   }
 });
 

@@ -193,11 +193,14 @@ $letters: 8;
 	font-family: $zycon;
 	color: $red;
 }
-.ic1, .ic2 {
-	animation: ic1Ani 2000ms infinite alternate forwards;
-}
-.ic3, .ic4 {
-	animation: ic4Ani 2000ms infinite alternate forwards;
+.animate-true {
+	& .ic1, .ic2 {
+		animation: ic1Ani 2000ms infinite alternate forwards;
+	}
+	& .ic3, .ic4 {
+		animation: ic4Ani 2000ms infinite alternate forwards;
+	}
+	
 }
 .live-description {
 	// color: $red;
