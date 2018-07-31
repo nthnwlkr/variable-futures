@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{%- include header.html -%}
+<div class="credits-section">
+	<div class="credit-title-section">
+		<h1 class="credit-page-title">Credits &amp;<br>Acknowledgements</h1>
+	</div>
+	<div class="credit-list-section">
+		<div class="credit-list">
+			{% for item in page.credit %}
+				<div class="credit-item">
+					<h1 class="credit-name">{{item.name}}</h1>
+					<h3 class="credit-title">{{item.title}}</h3>
+					<a target="_blank" href="{{item.url}}" class="credit-url">{{item.url}}</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

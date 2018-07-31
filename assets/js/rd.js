@@ -5,6 +5,7 @@ var benefitsHeight = $('.benefits-section').outerHeight(),
     winHeight = $(window).outerHeight(),
     liveSection = $('.live-interpolation-section'),
     liveOffset = liveSection.offset().top,
+    footerHeight = $('.footer-container').outerHeight(),
     benefitsScroll = (docHeight - (winHeight));
 
   console.log(docHeight);
@@ -14,7 +15,7 @@ var benefitsHeight = $('.benefits-section').outerHeight(),
 $(window).scroll(function() {    
   scrollDistance = $(window).scrollTop();
   console.log(scrollDistance);
-  if (scrollDistance > (docHeight - 100)) {
+  if (scrollDistance > (docHeight - footerHeight - 100)) {
     $('.site-nav')[0].classList.add('black');
   }else {
     $('.site-nav')[0].classList.remove('black');

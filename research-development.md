@@ -8,7 +8,6 @@ sections:
 - web-typography: "Web typography: a restrictive medium"
 - live-interpolation: "Live web interpolation"
 - typographic-behemoths: "Typographic behemoths assemble"
-- announcement: "Announcement: OpenType 1.8"
 - variable-fonts-realised: "Variable fonts realised"
 - key-benefits: "Key benefits"
 

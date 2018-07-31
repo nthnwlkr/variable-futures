@@ -1,0 +1,52 @@
+body.credits-page {
+	background: $dark-grey;
+
+	& .nav-link {
+		color: $white;
+	}
+}
+
+.credits-section {
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-around;
+}
+.credit-list-section {
+	max-width: 40%;
+	margin-top: 100px;
+	margin-bottom: 100px
+}
+.credit-title-section {
+	margin-top: 55px;
+	position: relative;
+}
+.credit-page-title {
+	font-family: $sans-font-family;
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 200, 'wght' 650;
+	font-size: 3vw;
+	transform: rotate(90deg) translate(50%, -200%);
+}
+.credit-item {
+	margin-bottom: 30px;
+}
+.credit-name {
+	font-family: $sans-font-family;
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 200, 'wght' 650;
+	font-size: 1.5vw;
+	margin-bottom: 3px;
+}
+.credit-title {
+	color: $brand-color;
+	margin-bottom: 3px;
+}
+.credit-url {
+	font-size: 1vw;
+	color: rgba($white, 0.2);
+
+	&:hover {
+		color: $white;
+	}
+}
