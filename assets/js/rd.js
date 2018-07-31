@@ -1,4 +1,25 @@
 $(document).ready(function(){
+
+var benefitsHeight = $('.benefits-section').outerHeight(),
+    docHeight = $(document).outerHeight(),
+    winHeight = $(window).outerHeight(),
+    benefitsScroll = (docHeight - (winHeight));
+
+  console.log(docHeight);
+  console.log(winHeight);
+  console.log(benefitsScroll);
+
+$(window).scroll(function() {    
+  scrollDistance = $(window).scrollTop();
+  console.log(scrollDistance);
+  if (scrollDistance > (docHeight - 100)) {
+    $('.site-nav')[0].classList.add('black');
+  }else {
+    $('.site-nav')[0].classList.remove('black');
+  }
+});
+
+
 $(".interpolation-title").lettering();
 
 dragElement(document.getElementById("scroll-box"));
