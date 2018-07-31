@@ -1,0 +1,39 @@
+.mobile-warning {
+	position: fixed;
+	background: linear-gradient(to top, $red, rgba($red, 0.5));
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+	z-index: 10000;
+}
+.mobile-warning.hidden-modal {
+	display: none !important;
+}
+.warning-text {
+	position: absolute;
+	bottom: 10px;
+	padding: 30px;
+}
+.warning-title {
+	margin-bottom: 30px;
+}
+.warning-button {
+	padding: 15px;
+	border: 2px solid $white;
+	text-align: center;
+	display: block;
+	color: $white;
+	font-size: 3vw;
+}
+@media screen and (max-width: 1024px) {
+	.mobile-warning {
+		display: block;
+	}
+}
+@media screen and (max-width: 760px) {
+	.warning-button {
+		font-size: 5vw;
+	}
+}
