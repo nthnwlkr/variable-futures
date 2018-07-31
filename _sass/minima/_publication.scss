@@ -3,11 +3,23 @@
 	margin: 10vw auto 8vw auto;
 	display: inline-block;
 }
+@keyframes imgFadeIn {
+	0% {
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
 .images-1 .pub-img {
 	margin: 7vw 0;
 	padding: 2vw;
 	clear: both;
 	display: block;
+	transform: translateY(50px);
+	transition: transform 1000ms ease;
+	visibility: hidden;
 
 	$size1: 1,4,7;
 	$size2: 3,6,8;
@@ -38,6 +50,12 @@
 
 	& img {
 		width: 100%;
+	}
+
+	&.fadeIn {
+		animation: imgFadeIn 300ms forwards;
+		transform: translateY(0);
+		visibility: visible;
 	}
 }
 
