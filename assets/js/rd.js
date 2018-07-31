@@ -15,7 +15,7 @@ var benefitsHeight = $('.benefits-section').outerHeight(),
 $(window).scroll(function() {    
   scrollDistance = $(window).scrollTop();
   console.log(scrollDistance);
-  if (scrollDistance > (docHeight - footerHeight - 100)) {
+  if (scrollDistance > (docHeight - footerHeight + 100)) {
     $('.site-nav')[0].classList.add('black');
   }else {
     $('.site-nav')[0].classList.remove('black');

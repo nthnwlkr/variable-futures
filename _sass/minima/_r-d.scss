@@ -412,3 +412,25 @@ $letters: 8;
 	font-family: $sans-font-family;
 	font-variation-settings: 'wdth' 120, 'wght' 480;
 }
+
+.realised-section {
+	background: #ccc;
+	padding-bottom: 4vw;
+}
+.realised-title-section {
+	padding: 4vw;
+}
+.realised-title {
+	font-family: $sans-font-family;
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 160, 'wght' 650;
+	font-size: 6.2vw;
+	color: $brand-color;
+	margin-bottom: 15px;
+}
+.realised-body {
+	color: $brand-color;
+	font-size: 1.2vw;
+	width: 60%;
+	line-height: 1.6;
+}
